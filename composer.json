@@ -1,0 +1,37 @@
+{
+	"name": "psmb/pokayanie1917",
+	"description" : "Pokayanie1917 Distribution",
+	"config": {
+		"vendor-dir": "Packages/Libraries",
+		"bin-dir": "bin"
+	},
+	"require": {
+		"neos/neos-development-collection": "3.0.x-dev",
+		"neos/flow-development-collection": "4.0.x-dev",
+		"neos/party": "~4.0.0",
+		"neos/imagine": "~3.0.0",
+		"neos/form": "~4.0.0",
+		"neos/setup": "~4.0.0",
+
+		"neos/googleanalytics": "~2.0.0",
+		"neos/redirecthandler": "@dev",
+		"neos/redirecthandler-databasestorage": "@dev",
+		"neos/redirecthandler-neosadapter": "@dev",
+
+		"sfi/youtube": "*",
+		"sfi/grid": "*",
+		"psmb/nodetypes": "*",
+		"opsdev/cache-breaker": "^2.0"
+	},
+	"extra": {
+		"neos": {
+			"default-disabled-packages": ["flowpack/neos-frontendlogin", "neos/neos-nodetypes"]
+		}
+	},
+	"scripts": {
+		"post-update-cmd": "Neos\\Flow\\Composer\\InstallerScripts::postUpdateAndInstall",
+		"post-install-cmd": "Neos\\Flow\\Composer\\InstallerScripts::postUpdateAndInstall",
+		"post-package-update": "Neos\\Flow\\Composer\\InstallerScripts::postPackageUpdateAndInstall",
+		"post-package-install": "Neos\\Flow\\Composer\\InstallerScripts::postPackageUpdateAndInstall"
+	}
+}
