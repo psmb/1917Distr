@@ -1,6 +1,6 @@
-<div class="t160__wrapper">
-	<img class="t160__img t-img" src="{imageUri}" imgfield="img" alt="">
+<div class="t160__wrapper textAlign-center">
+	<img class="t160__img t-img" src="{imageUri}" imgfield="img" alt="" style="box-sizing: content-box" />
 	<div field="text" class="t160__text t-descr">{text -> f:format.raw()}</div>
 	<div class="t160__title t-name t-name_lg" field="title">{source -> f:format.raw()}</div>
-	<div field="descr" class="t160__descr t-descr t-descr_xxs">{sourceInfo -> f:format.raw()}</div>
+	<div field="descr" style="margin: 0 auto" class="medium-6 t160__descr t-descr t-descr_xxs">{sourceInfo -> f:format.raw()}</div>
 </div>
