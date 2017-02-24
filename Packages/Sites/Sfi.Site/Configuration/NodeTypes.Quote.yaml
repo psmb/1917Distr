@@ -41,3 +41,18 @@
         reloadIfChanged: true
         inspector:
           group: image
+    variant:
+      defaultValue: '1'
+      type: string
+      ui:
+        label: Вариант
+        reloadIfChanged: true
+        inspector:
+          group: image
+          editor: Neos.Neos/Inspector/Editors/SelectBoxEditor
+          editorOptions:
+            values:
+              1:
+                label: 'Вариант 1'
+              2:
+                label: 'Вариант 2'

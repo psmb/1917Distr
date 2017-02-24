@@ -1,5 +1,5 @@
 prototype(Sfi.Site:Quote) {
-	templatePath = 'resource://Sfi.Site/Private/Fusion/NodeTypes/Quote.html'
+	templatePath = ${'resource://Sfi.Site/Private/Fusion/NodeTypes/Quote' + node.properties.variant + '.html'}
 	text = Neos.Fusion:Tag {
 		content = ${q(node).property('text')}
 		@process.contentElementEditable = ContentElementEditable {
