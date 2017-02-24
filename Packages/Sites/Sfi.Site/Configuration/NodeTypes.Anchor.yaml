@@ -1,0 +1,18 @@
+'Sfi.Site:Anchor':
+  superTypes:
+    'Neos.Neos:Content': true
+  ui:
+    label: 'Якорь главного меню'
+    inlineEditable: true
+    inspector:
+      groups:
+        anchor:
+          ui:
+            label: Якорь
+  properties:
+    name:
+      type: string
+      ui:
+        label: 'Имя якоря в меню'
+        inspector:
+          group: anchor

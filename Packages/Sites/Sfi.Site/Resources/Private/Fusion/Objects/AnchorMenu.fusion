@@ -1,0 +1,14 @@
+prototype(Sfi.Site:AnchorMenu) < prototype(Neos.Fusion:Collection) {
+	collection = ${q(documentNode).find('[instanceof Sfi.Site:Anchor]').get()}
+	itemRenderer = Neos.Fusion:Tag {
+		tagName = 'li'
+		attributes.class = 't229__list_item'
+		attributes.style = 'font-size:13px;font-weight:700;text-transform:uppercase;'
+		content = Neos.Fusion:Tag {
+			tagName = 'a'
+			attributes.class = 't-menu__link-item'
+			attributes.href = ${'#' + node.name}
+			content = ${node.properties.name}
+		}
+	}
+}

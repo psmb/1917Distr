@@ -1,0 +1,19 @@
+<a{attributes -> f:format.raw()}>
+	<div class="t279__img-wrapper">
+		<div class="t279__img t-bgimg loaded" data-original="{imageUri}" style="background-image: url('{imageUri}');" src=""></div>
+		<div class="t279__img-separator" style=""></div>
+	</div>
+	<div class="t279__textwrapper" style="background-color: rgb(255, 255, 255);">
+		<div class="t279__sp"></div>
+		<div class="t279__title t-name t-name_xl" style="">
+			{title -> f:format.raw()}
+		</div>
+		<div class="t279__descr t-descr t-descr_xxs">
+			{subTitle -> f:format.raw()}
+		</div>
+		<div class="t279__descr t-descr t-descr_xxs">
+			{place -> f:format.raw()}
+			<f:format.date forceLocale="{true}" cldrFormat="dd MMMM yyyy">{date}</f:format.date>
+		</div>
+	</div>
+</a>

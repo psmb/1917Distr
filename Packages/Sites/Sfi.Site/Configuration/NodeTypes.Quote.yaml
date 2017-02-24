@@ -1,0 +1,37 @@
+'Sfi.Site:Quote':
+  superTypes:
+    'Neos.Neos:Content': true
+  ui:
+    label: 'Цитата'
+    inlineEditable: true
+    inspector:
+      groups:
+        image:
+          ui:
+            label: Фотка
+  properties:
+    text:
+      type: string
+      inlineEditable: true
+      ui:
+        aloha:
+          placeholder: '<p>Текст цитаты</p>'
+    source:
+      type: string
+      inlineEditable: true
+      ui:
+        aloha:
+          placeholder: '<p>Источник</p>'
+    sourceInfo:
+      type: string
+      inlineEditable: true
+      ui:
+        aloha:
+          placeholder: '<p>Еще текст</p>'
+    image:
+      type: Neos\Media\Domain\Model\ImageInterface
+      ui:
+        label: Изображение
+        reloadIfChanged: true
+        inspector:
+          group: image

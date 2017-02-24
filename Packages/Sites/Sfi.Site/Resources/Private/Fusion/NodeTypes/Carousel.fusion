@@ -1,0 +1,18 @@
+prototype(Sfi.Site:Carousel) {
+	templatePath = 'resource://Sfi.Site/Private/Fusion/NodeTypes/Carousel.html'
+	slides = ContentCollectionRenderer
+	slidesNav = Neos.Fusion:Collection {
+		collection = ${q(node).children().get()}
+		itemName = 'node'
+		itemRenderer = Neos.Fusion:Tag {
+			tagName = 'li'
+			attributes {
+				class = ${iterator.isFirst ? 'white active' : 'white'}
+				data-slide-to = ${iterator.index}
+				data-target = ${'#' + node.name}
+			}
+			content = ''
+		}
+	}
+	node = ${node}
+}

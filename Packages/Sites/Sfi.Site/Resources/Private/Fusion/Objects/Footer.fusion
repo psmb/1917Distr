@@ -1,3 +1,4 @@
 prototype(Sfi.Site:Footer) < prototype(Neos.Fusion:Template) {
 	templatePath = 'resource://Sfi.Site/Private/Fusion/Objects/Footer.html'
+	anchorMenu = Sfi.Site:AnchorMenu
 }

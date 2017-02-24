@@ -1,0 +1,24 @@
+prototype(Sfi.Site:Quote) {
+	templatePath = 'resource://Sfi.Site/Private/Fusion/NodeTypes/Quote.html'
+	text = Neos.Fusion:Tag {
+		content = ${q(node).property('text')}
+		@process.contentElementEditable = ContentElementEditable {
+			property = 'text'
+		}
+	}
+	source = Neos.Fusion:Tag {
+		content = ${q(node).property('source')}
+		@process.contentElementEditable = ContentElementEditable {
+			property = 'source'
+		}
+	}
+	sourceInfo = Neos.Fusion:Tag {
+		content = ${q(node).property('sourceInfo')}
+		@process.contentElementEditable = ContentElementEditable {
+			property = 'sourceInfo'
+		}
+	}
+	imageUri = Psmb.NodeTypes:ImageUri {
+		@context.asset = ${node.properties.image}
+	}
+}

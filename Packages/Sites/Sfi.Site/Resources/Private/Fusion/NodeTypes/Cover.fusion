@@ -1,0 +1,8 @@
+prototype(Sfi.Site:Cover) {
+	templatePath = 'resource://Sfi.Site/Private/Fusion/NodeTypes/Cover.html'
+	content = ContentCollectionRenderer
+
+	imageUri = Psmb.NodeTypes:ImageUri {
+		@context.asset = ${node.properties.image}
+	}
+}

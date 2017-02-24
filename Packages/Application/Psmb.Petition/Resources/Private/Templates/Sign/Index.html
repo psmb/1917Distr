@@ -1,0 +1,14 @@
+<!-- this template is just an example! Override it and make it your own! -->
+<f:form
+        method="post"
+        action="sign"
+        controller="Sign"
+        package="Psmb.Petition"
+>
+    <div><f:form.textfield name="name" placeholder="Enter your name" /></div>
+    <div><f:form.textfield name="email" placeholder="Enter your email" /></div>
+    <div><f:form.textfield name="place" placeholder="Enter your place" /></div>
+    <div><f:form.textfield name="comment" placeholder="Enter your comment" /></div>
+    <div><f:form.submit value="Submit!"/></div>
+</f:form>
+<f:flashMessages />

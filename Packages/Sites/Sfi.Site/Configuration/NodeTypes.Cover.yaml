@@ -1,0 +1,20 @@
+'Sfi.Site:Cover':
+  superTypes:
+    'Neos.Neos:Content': true
+    'Neos.Neos:ContentCollection': true
+  ui:
+    label: 'Обложка'
+    inlineEditable: true
+    inspector:
+      groups:
+        image:
+          ui:
+            label: Фотка
+  properties:
+    image:
+      type: Neos\Media\Domain\Model\ImageInterface
+      ui:
+        label: Изображение
+        reloadIfChanged: true
+        inspector:
+          group: image

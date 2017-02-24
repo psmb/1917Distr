@@ -1,14 +1,39 @@
 prototype(Psmb.NodeTypes:Text) {
-  attributes.class = 'RteText'
+  attributes.class = 't-text t-text_md '
+}
+prototype(Psmb.NodeTypes:Lead) {
+  attributes.class = 't-text t-text_md textAlign-center '
+  attributes.style = 'font-size: 30px'
 }
 prototype(Psmb.NodeTypes:Headline) {
-  attributes.class = 'RteText'
+  attributes.class = 't-title t-title_lg textAlign-center'
 }
 prototype(Psmb.NodeTypes:Image) {
   attributes.class = 'Figure'
   content.caption.attributes.class = 'Figure-caption'
+  content.image.attributes.src.@context.maximumWidth = 1200
 }
 
 prototype(Neos.Fusion:Collection) {
 	itemName = 'node'
+}
+
+prototype(ContentElementWrapping).@process.visibility = Neos.Fusion:Case {
+  document {
+    condition = ${documentNode == node || q(node).is('[instanceof Sfi.Grid:Column]') || q(node).is('[instanceof Sfi.Site:CarouselSlide]')}
+    renderer = ${value}
+  }
+  default {
+    condition = ${true}
+    renderer = Neos.Fusion:Tag {
+      attributes.class = Neos.Fusion:RawArray {
+        visibility = ${node.properties.visibility}
+      }
+      attributes.style = Neos.Fusion:RawArray {
+        paddingTop = ${node.properties.paddingTop && ('padding-top: ' + node.properties.paddingTop * 12 + 'px;')}
+        paddingBottom = ${node.properties.paddingBottom && ('padding-bottom: ' + node.properties.paddingBottom * 12 + 'px;')}
+      }
+      content = ${value}
+    }
+  }
 }

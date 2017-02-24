@@ -1,7 +1,14 @@
 {namespace neos=Neos\Neos\ViewHelpers}
 <header class="Header">
-	<neos:link.node node="~" title="{f:translate(package:'Sfi.Site', id:'global.tomain')}">
-		<h1><f:translate package="Sfi.Site" id="global.fulltitle"/></h1>
-	</neos:link.node>
-	<nav>{mainMenu -> f:format.raw()}</nav>
+	<div id="nav14607811" class="t229 t229__positionfixed" style="background-color: rgba(255,255,255,1); height:50px; " data-bgcolor-hex="#ffffff" data-bgcolor-rgba="rgba(255,255,255,1)" data-navmarker="nav14607811marker" data-appearoffset="" data-bgopacity="1" data-menu="yes" data-bgcolor-setbyscript="yes">
+	<div class="t229__maincontainer " style="height:50px;">
+		<div class="t229__padding40px"></div>
+		<div class="t229__centerside ">
+			<ul class="uppercase">
+				{anchorMenu -> f:format.raw()}
+			</ul>
+		</div>
+		<div class="t229__padding40px"></div>
+	</div>
+</div>
 </header>

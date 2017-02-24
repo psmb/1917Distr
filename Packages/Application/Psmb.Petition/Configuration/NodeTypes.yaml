@@ -1,0 +1,22 @@
+'Psmb.Petition:SignPlugin':
+  superTypes:
+    'Neos.Neos:Content': true
+  ui:
+    label: 'Sign Petition Plugin'
+    icon: icon-envelope
+
+'Psmb.Petition:Signature':
+  superTypes:
+    'Neos.Neos:Content': true
+  ui:
+    label: 'Petition Signature'
+    icon: icon-envelope
+  properties:
+    name:
+      type: 'string'
+    email:
+      type: 'string'
+    place:
+      type: 'string'
+    comment:
+      type: 'string'

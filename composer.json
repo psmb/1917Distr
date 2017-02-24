@@ -1,6 +1,6 @@
 {
-	"name": "psmb/pokayanie1917",
-	"description" : "Pokayanie1917 Distribution",
+	"name": "psmb/1917",
+	"description" : "1917 Distribution",
 	"config": {
 		"vendor-dir": "Packages/Libraries",
 		"bin-dir": "bin"
@@ -25,7 +25,10 @@
 	},
 	"extra": {
 		"neos": {
-			"default-disabled-packages": ["flowpack/neos-frontendlogin", "neos/neos-nodetypes"]
+			"default-disabled-packages": [
+				"flowpack/neos-frontendlogin",
+				"neos/nodetypes"
+			]
 		}
 	},
 	"scripts": {

@@ -1,0 +1,62 @@
+'Sfi.Site:Announcement':
+  superTypes:
+    'Neos.Neos:Content': true
+  ui:
+    label: 'Анонс'
+    inlineEditable: true
+    inspector:
+      groups:
+        announcement:
+          ui:
+            label: Анонс
+  properties:
+    title:
+      type: string
+      inlineEditable: true
+      ui:
+        aloha:
+          placeholder: '<p>Заголовок анонса</p>'
+    subTitle:
+      type: string
+      inlineEditable: true
+      ui:
+        aloha:
+          placeholder: '<p>Подзаголовок анонса</p>'
+    place:
+      type: string
+      inlineEditable: true
+      ui:
+        aloha:
+          placeholder: '<p>Место анонса</p>'
+    date:
+      type: DateTime
+      defaultValue: now
+      ui:
+        label: Дата
+        reloadIfChanged: true
+        inspector:
+          group: announcement
+          editorOptions:
+            format: 'd-m-Y H:i'
+    image:
+      type: Neos\Media\Domain\Model\ImageInterface
+      ui:
+        label: Изображение
+        reloadIfChanged: true
+        inspector:
+          group: announcement
+    link:
+      type: string
+      ui:
+        label: 'Адрес ссылки'
+        reloadIfChanged: false
+        inspector:
+          group: announcement
+          editor: Neos.Neos/Inspector/Editors/LinkEditor
+
+
+'Sfi.Site:AnnouncementBig':
+  superTypes:
+    'Sfi.Site:Announcement': true
+  ui:
+    label: 'Большой анонс'

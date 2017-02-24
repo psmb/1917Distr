@@ -1,0 +1,11 @@
+'Sfi.Site:Carousel':
+  superTypes:
+    'Neos.Neos:Content': true
+    'Neos.Neos:ContentCollection': true
+  ui:
+    label: 'Карусель'
+    inlineEditable: true
+  constraints:
+    nodeTypes:
+      '*': false
+      'Sfi.Site:CarouselSlide': true

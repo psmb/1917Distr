@@ -1,0 +1,33 @@
+'Sfi.Site:TextWithButton':
+  superTypes:
+    'Neos.Neos:Content': true
+  ui:
+    label: 'Текст с кнопкой'
+    inlineEditable: true
+    inspector:
+      groups:
+        link:
+          ui:
+            label: Ссылка
+  properties:
+    text:
+      type: string
+      inlineEditable: true
+      ui:
+        aloha:
+          placeholder: '<p>Текст</p>'
+    linkText:
+      type: string
+      inlineEditable: true
+      defaultValue: 'Читать'
+      ui:
+        aloha:
+          placeholder: '<p>Текст</p>'
+    link:
+      type: string
+      ui:
+        label: 'Адрес ссылки'
+        reloadIfChanged: false
+        inspector:
+          group: link
+          editor: Neos.Neos/Inspector/Editors/LinkEditor

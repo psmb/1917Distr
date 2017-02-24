@@ -1,0 +1,18 @@
+prototype(Psmb.Petition:SignPlugin) < prototype(Plugin) {
+	package = 'Psmb.Petition'
+	controller = 'Sign'
+	argumentNamespace = 'sign-petition'
+	@process.add = Neos.Fusion:Array {
+		1 = ${value}
+		2 = Psmb.Petition:List
+	}
+}
+
+prototype(Psmb.Petition:List) < prototype(Neos.Fusion:Collection) {
+	itemName = 'node'
+	collection = ${q(documentNode).children('petitions').children('[instanceof Psmb.Petition:Signature]').get()}
+	itemRenderer = Psmb.Petition:Signature
+}
+
+prototype(Psmb.Petition:Signature) {
+}

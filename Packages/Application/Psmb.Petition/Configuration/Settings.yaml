@@ -1,0 +1,10 @@
+Neos:
+  Flow:
+    mvc:
+      routes:
+        'Psmb.Petition':
+          position: 'before Neos.Neos'
+  Neos:
+    fusion:
+      autoInclude:
+        Psmb.Petition: true

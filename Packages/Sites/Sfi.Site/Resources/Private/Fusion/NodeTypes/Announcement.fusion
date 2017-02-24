@@ -1,0 +1,36 @@
+prototype(Sfi.Site:Announcement) {
+	templatePath = 'resource://Sfi.Site/Private/Fusion/NodeTypes/Announcement.html'
+	title = Neos.Fusion:Tag {
+		content = ${q(node).property('title')}
+		@process.contentElementEditable = ContentElementEditable {
+			property = 'title'
+		}
+	}
+	subTitle = Neos.Fusion:Tag {
+		content = ${q(node).property('subTitle')}
+		@process.contentElementEditable = ContentElementEditable {
+			property = 'subTitle'
+		}
+	}
+	place = Neos.Fusion:Tag {
+		content = ${q(node).property('place')}
+		@process.contentElementEditable = ContentElementEditable {
+			property = 'place'
+		}
+	}
+	imageUri = Psmb.NodeTypes:ImageUri {
+		@context.asset = ${node.properties.image}
+	}
+
+	attributes {
+		href = ${node.properties.link}
+		href.@process.convertUris = Neos.Neos:ConvertUris
+		@if.hideInBE = ${!documentNode.context.inBackend}
+	}
+}
+
+prototype(Sfi.Site:AnnouncementBig) < prototype(Sfi.Site:Announcement) {
+	templatePath = 'resource://Sfi.Site/Private/Fusion/NodeTypes/AnnouncementBig.html'
+	link = ${node.properties.link}
+	link.@process.convertUris = Neos.Neos:ConvertUris
+}

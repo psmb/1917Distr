@@ -1,0 +1,5 @@
+prototype(Sfi.Site:Anchor) < prototype(Neos.Fusion:Tag) {
+	attributes.id = ${node.name}
+	content = ''
+	@process.contentElementWrapping = ContentElementWrapping
+}

@@ -1,0 +1,20 @@
+'Sfi.Site:CarouselSlide':
+  superTypes:
+    'Neos.Neos:Content': true
+    'Neos.Neos:ContentCollection': true
+  ui:
+    label: 'Слайд карусели'
+    inlineEditable: true
+    inspector:
+      groups:
+        image:
+          ui:
+            label: Фотка
+  properties:
+    image:
+      type: Neos\Media\Domain\Model\ImageInterface
+      ui:
+        label: Изображение
+        reloadIfChanged: true
+        inspector:
+          group: image

@@ -1,0 +1,11 @@
+prototype(Sfi.Site:CarouselSlide) {
+	templatePath = 'resource://Sfi.Site/Private/Fusion/NodeTypes/CarouselSlide.html'
+	attributes {
+		class = ${iterator.isFirst ? 'item active' : 'item'}
+	}
+	content = ContentCollectionRenderer
+
+	imageUri = Psmb.NodeTypes:ImageUri {
+		@context.asset = ${node.properties.image}
+	}
+}
