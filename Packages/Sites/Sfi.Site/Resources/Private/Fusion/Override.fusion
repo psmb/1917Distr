@@ -8,6 +8,9 @@ prototype(Psmb.NodeTypes:Lead) {
 prototype(Psmb.NodeTypes:Headline) {
   attributes.class = 't-title t-title_lg textAlign-center'
 }
+prototype(Sfi.Site:Cover).prototype(Psmb.NodeTypes:Headline) {
+  attributes.class = 't-title t-title_lg textAlign-center t102__title'
+}
 prototype(Psmb.NodeTypes:Image) {
   attributes.class = 'Figure'
   content.caption.attributes.class = 'Figure-caption'
