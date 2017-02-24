@@ -37,7 +37,6 @@ class SignController extends ActionController
      */
     public function indexAction()
     {
-
     }
 
     /**
@@ -47,15 +46,13 @@ class SignController extends ActionController
      * @param string $email
      * @param string $place
      * @param string $comment
+     * @param string $about
      * @return void
      */
-    public function signAction($name = null, $email = null, $place = null, $comment = null)
+    public function signAction($name = null, $email = null, $place = null, $comment = null, $about = null)
     {
         if (!$name) {
             $this->addFlashMessage("Укажите ваше имя");
-            $this->redirect('index');
-        } else if (!$email) {
-            $this->addFlashMessage("Укажите ваше email");
             $this->redirect('index');
         } else {
             $emailValidator = new EmailAddressValidator();
@@ -71,7 +68,9 @@ class SignController extends ActionController
                 $nodeTemplate->setProperty('email', $email);
                 $nodeTemplate->setProperty('place', $place);
                 $nodeTemplate->setProperty('comment', $comment);
-                $rootNode->createNodeFromTemplate($nodeTemplate);
+                $nodeTemplate->setProperty('about', $about);
+                $node = $rootNode->createNodeFromTemplate($nodeTemplate);
+                $node->setHidden(true);
                 $this->addFlashMessage("Cпасибо!");
                 $this->redirect('feedback');
             }

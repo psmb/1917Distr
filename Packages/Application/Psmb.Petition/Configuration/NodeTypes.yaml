@@ -6,17 +6,32 @@
     icon: icon-envelope
 
 'Psmb.Petition:Signature':
+  label: "${q(node).property('name')}"
   superTypes:
     'Neos.Neos:Content': true
   ui:
     label: 'Petition Signature'
     icon: icon-envelope
+    inspector:
+      groups:
+        signature:
+          label: 'Подпись'
   properties:
     name:
       type: 'string'
-    email:
-      type: 'string'
     place:
       type: 'string'
+    about:
+      type: 'string'
+    email:
+      type: 'string'
+      ui:
+        label: E-mail
+        inspector:
+          group: signature
     comment:
       type: 'string'
+      ui:
+        label: Комментарий
+        inspector:
+          group: signature

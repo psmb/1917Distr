@@ -1,14 +1,68 @@
-<!-- this template is just an example! Override it and make it your own! -->
-<f:form
-        method="post"
-        action="sign"
-        controller="Sign"
-        package="Psmb.Petition"
->
-    <div><f:form.textfield name="name" placeholder="Enter your name" /></div>
-    <div><f:form.textfield name="email" placeholder="Enter your email" /></div>
-    <div><f:form.textfield name="place" placeholder="Enter your place" /></div>
-    <div><f:form.textfield name="comment" placeholder="Enter your comment" /></div>
-    <div><f:form.submit value="Submit!"/></div>
-</f:form>
-<f:flashMessages />
+<div id="rec14606606" class="r r_anim r_showed" style="padding-top:0px;padding-bottom:54px; " data-record-type="214">
+	<div class="t186B">
+		<f:form
+			method="post"
+			action="sign"
+			controller="Sign"
+			package="Psmb.Petition"
+			id="form14606606" name="form14606606"
+		>
+			<div>
+				<f:flashMessages />
+				<div class="js-errorbox-all t186B__blockinput-errorbox" style="display:none;">
+					<div class="t186B__blockinput-errors-text t-text t-text_md">
+						<p class="t186B__blockinput-errors-item js-rule-error js-rule-error-all"></p>
+						<p class="t186B__blockinput-errors-item js-rule-error js-rule-error-req">Required field</p>
+						<p class="t186B__blockinput-errors-item js-rule-error js-rule-error-email">Please correct e-mail address</p>
+						<p class="t186B__blockinput-errors-item js-rule-error js-rule-error-name">Name Wrong. Correct please</p>
+						<p class="t186B__blockinput-errors-item js-rule-error js-rule-error-phone">Please correct phone number</p>
+						<p class="t186B__blockinput-errors-item js-rule-error js-rule-error-string">Please enter letter, number or punctuation symbols.</p>
+					</div>
+				</div>
+				<div class="js-successbox t186B__blockinput-success t-text t-text_md" style="display:none;"> Thank You! </div>
+			</div>
+			<div class="row">
+				<div class="small-12 large-4 columns paddingVertical-single">
+					<f:form.textfield name="name" class="t186B__input t-input js-tilda-rule " placeholder="Ваше имя" style="color:#000000; border:1px solid #adadad; border-radius: 0px; -moz-border-radius: 0px; -webkit-border-radius: 0px;"/>
+				</div>
+				<div class="small-12 large-4 columns paddingVertical-single">
+					<f:form.textfield name="email" class="t186B__input t-input js-tilda-rule " placeholder="Ваш e-mail" style="color:#000000; border:1px solid #adadad; border-radius: 0px; -moz-border-radius: 0px; -webkit-border-radius: 0px;"/>
+				</div>
+				<div class="small-12 large-4 columns paddingVertical-single">
+					<f:form.textfield name="place" class="t186B__input t-input js-tilda-rule " placeholder="Ваш город" style="color:#000000; border:1px solid #adadad; border-radius: 0px; -moz-border-radius: 0px; -webkit-border-radius: 0px;"/>
+				</div>
+			</div>
+      <div class="row">
+        <div class="small-12 large-8 columns paddingVertical-single">
+          <f:form.textfield name="comment" class="t186B__input t-input js-tilda-rule " placeholder="Почему для вас важно присоединиться к акции" style="color:#000000; border:1px solid #adadad; border-radius: 0px; -moz-border-radius: 0px; -webkit-border-radius: 0px;"/>
+        </div>
+        <div class="small-12 large-4 columns paddingVertical-single">
+          <f:form.textfield name="about" class="t186B__input t-input js-tilda-rule " placeholder="Немного о себе" style="color:#000000; border:1px solid #adadad; border-radius: 0px; -moz-border-radius: 0px; -webkit-border-radius: 0px;"/>
+        </div>
+      </div>
+      <div class="row paddingVertical-single">
+        <div class="columns">
+          <f:form.submit class="t-submit"	style="width: 100%; color:#ffffff;background-color:#eb443c;border-radius:0px; -moz-border-radius:0px; -webkit-border-radius:0px;" value="Присоединиться"/>
+        </div>
+      </div>
+		</f:form>
+	</div>
+	<style>
+		#rec14606606 input::-webkit-input-placeholder {
+			color: #000000;
+			opacity: 0.5;
+		}
+		#rec14606606 input::-moz-placeholder {
+			color: #000000;
+			opacity: 0.5;
+		}
+		#rec14606606 input:-moz-placeholder {
+			color: #000000;
+			opacity: 0.5;
+		}
+		#rec14606606 input:-ms-input-placeholder {
+			color: #000000;
+			opacity: 0.5;
+		}
+	</style>
+</div>
