@@ -1,11 +1,11 @@
-<div class="t-container">
-	<div class="t-col t-col_8 t-prefix_2">
-		<div class="t013__text t-text t-text_md" field="text">{text -> f:format.raw()}</div>
+<div class="row">
+	<div class="medium-9 large-offset-2 large-8 columns">
+		<div class="t-text t-text_md">{text -> f:format.raw()}</div>
 	</div>
-	<div class="t-col t-col_2  t013__centeredsection">
+	<div class="medium-3 large-2 columns textAlign-center">
 		<img class="t013__img t-img" src="{imageUri}" imgfield="img" data-tu-max-width="320" data-tu-max-height="320" data-tu-cover="c">
 		<br>
-		<div class="t013__autor-title t-descr" field="imgtitle">{source -> f:format.raw()}</div>
-		<div class="t013__autor-descr t-descr" field="imgdescr">{sourceInfo -> f:format.raw()}</div>
+		<div class="t013__autor-title t-descr">{source -> f:format.raw()}</div>
+		<div class="t013__autor-descr t-descr">{sourceInfo -> f:format.raw()}</div>
 	</div>
 </div>

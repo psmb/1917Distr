@@ -1,3 +1,7 @@
 .Details-summary {
 	cursor: pointer;
+
+	&:focused {
+		outline: 0;
+	}
 }
