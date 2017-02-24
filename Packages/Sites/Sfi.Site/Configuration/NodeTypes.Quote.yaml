@@ -12,22 +12,28 @@
   properties:
     text:
       type: string
-      inlineEditable: true
       ui:
+        inlineEditable: true
         aloha:
           placeholder: '<p>Текст цитаты</p>'
+          link:
+            a: true
     source:
       type: string
-      inlineEditable: true
       ui:
+        inlineEditable: true
         aloha:
           placeholder: '<p>Источник</p>'
+          link:
+            a: true
     sourceInfo:
       type: string
-      inlineEditable: true
       ui:
+        inlineEditable: true
         aloha:
           placeholder: '<p>Еще текст</p>'
+          link:
+            a: true
     image:
       type: Neos\Media\Domain\Model\ImageInterface
       ui:

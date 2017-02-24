@@ -16,6 +16,8 @@
       ui:
         aloha:
           placeholder: '<p>Текст</p>'
+          link:
+            a: true
     linkText:
       type: string
       inlineEditable: true
