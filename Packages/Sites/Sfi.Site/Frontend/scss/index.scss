@@ -8,6 +8,7 @@ $grid-column-gutter: (
 @import 'Base/**/*.scss';
 @import 'Modules/**/*.scss';
 @import 'overrideVendor';
+@import 'shame';
 
 @include foundation-flex-grid;
 @include foundation-flex-video;
