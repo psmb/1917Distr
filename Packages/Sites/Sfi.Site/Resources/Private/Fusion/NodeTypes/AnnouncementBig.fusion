@@ -1,5 +1,6 @@
-prototype(Sfi.Site:Announcement) {
-	templatePath = 'resource://Sfi.Site/Private/Fusion/NodeTypes/Announcement.html'
+prototype(Sfi.Site:AnnouncementBig) < prototype(Sfi.Site:Announcement) {
+	templatePath = 'resource://Sfi.Site/Private/Fusion/NodeTypes/AnnouncementBig.html'
+
 	title = Neos.Fusion:Tag {
 		content = ${q(node).property('title')}
 		@process.contentElementEditable = ContentElementEditable {
@@ -22,9 +23,6 @@ prototype(Sfi.Site:Announcement) {
 		@context.asset = ${node.properties.image}
 	}
 
-	attributes {
-		href = ${node.properties.link}
-		href.@process.convertUris = Neos.Neos:ConvertUris
-		@if.hideInBE = ${!documentNode.context.inBackend}
-	}
+	link = ${node.properties.link}
+	link.@process.convertUris = Neos.Neos:ConvertUris
 }
