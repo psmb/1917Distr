@@ -1,0 +1,12 @@
+prototype(Sfi.Site:Cat) {
+	templatePath = 'resource://Sfi.Site/Private/Fusion/NodeTypes/Cat.html'
+	content = ContentCollectionRenderer
+
+	summary = Neos.Fusion:Tag {
+		tagName = 'span'
+		content = ${q(node).property('summary')}
+		@process.contentElementEditable = ContentElementEditable {
+			property = 'summary'
+		}
+	}
+}

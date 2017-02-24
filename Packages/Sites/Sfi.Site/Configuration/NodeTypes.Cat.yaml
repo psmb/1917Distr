@@ -1,0 +1,12 @@
+'Sfi.Site:Cat':
+  superTypes:
+    'Neos.Neos:Content': true
+    'Neos.Neos:ContentCollection': true
+  ui:
+    label: 'Кат'
+    inlineEditable: true
+  properties:
+    summary:
+      ui:
+        aloha:
+          placeholder: 'Текст кнопки'
