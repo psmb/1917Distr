@@ -1,4 +1,4 @@
-prototype(Sfi.Site:AnnouncementBig) < prototype(Sfi.Site:Announcement) {
+prototype(Sfi.Site:AnnouncementBig) {
 	templatePath = 'resource://Sfi.Site/Private/Fusion/NodeTypes/AnnouncementBig.html'
 
 	title = Neos.Fusion:Tag {
