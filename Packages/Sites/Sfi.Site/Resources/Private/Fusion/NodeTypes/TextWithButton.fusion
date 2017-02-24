@@ -18,6 +18,6 @@ prototype(Sfi.Site:TextWithButton) {
 		class = 't-btn'
 		href = ${node.properties.link}
 		href.@process.convertUris = Neos.Neos:ConvertUris
-		@if.hideInBE = ${!documentNode.context.inBackend}
+		href.@if.hideInBE = ${!documentNode.context.inBackend}
 	}
 }
