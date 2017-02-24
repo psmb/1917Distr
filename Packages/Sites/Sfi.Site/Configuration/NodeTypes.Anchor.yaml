@@ -16,3 +16,9 @@
         label: 'Имя якоря в меню'
         inspector:
           group: anchor
+    isSecondary:
+      type: bool
+      ui:
+        label: 'Второстепенное меню?'
+        inspector:
+          group: anchor

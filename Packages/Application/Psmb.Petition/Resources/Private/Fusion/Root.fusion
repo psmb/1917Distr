@@ -3,7 +3,7 @@ prototype(Psmb.Petition:SignPlugin) < prototype(Plugin) {
 	controller = 'Sign'
 	argumentNamespace = 'sign-petition'
 	@process.add = Neos.Fusion:Array {
-		1 = '<div field="text" class="t-text t-text_md paddingVertical-single"><strong>Если вам не безразлично прошлое и будущее нашей страны и вы готовы подписаться под этим обращением, заполните форму ниже:</strong></div>'
+		1 = '<div field="text" class="t-text t-text_md paddingVertical-single textAlign-center><strong>Я готов присоединиться:</strong></div>'
 		2 = ${value}
 		3 = '<h2 class="t-title t-title_sm">К акции присоединились:</h2>'
 		4 = Psmb.Petition:List
