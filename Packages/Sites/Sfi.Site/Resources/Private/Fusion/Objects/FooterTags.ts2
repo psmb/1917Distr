@@ -1,0 +1,3 @@
+prototype(Sfi.Site:FooterTags) < prototype(Neos.Fusion:Template) {
+	templatePath = 'resource://Sfi.Site/Private/Fusion/Objects/FooterTags.html'
+}

@@ -1,31 +1,8 @@
 prototype(Sfi.Site:PageObject) < prototype(Page) {
 	head {
 		titleTag.content = ${String.stripTags(q(node).property('title')) + ' | ' + Translation.translate('global.shorttitle', null, [], null, 'Sfi.Site')}
-		miscStuff = ${'
-			<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
-		'}
-		stylesheets.index = Neos.Fusion:Tag {
-			tagName = 'link'
-			attributes {
-				href = Neos.Fusion:ResourceUri {
-					path = 'resource://Sfi.Site/Public/built/index.css'
-				}
-				type = 'text/css'
-				rel = 'stylesheet'
-			}
-		}
-		stylesheets.vendor = Neos.Fusion:Tag {
-			tagName = 'link'
-			attributes {
-				href = Neos.Fusion:ResourceUri {
-					path = 'resource://Sfi.Site/Public/built/vendor.css'
-				}
-				type = 'text/css'
-				rel = 'stylesheet'
-			}
-		}
+		headTags = Sfi.Site:HeadTags
 	}
-	# TODO: find out why this is broken
 	htmlTag.attributes.lang = ${Array.first(node.context.dimensions.language)}
 	bodyTag.attributes.class = 'Page'
 	bodyTag.attributes.id = ${'Page-' + q(node).property('_name')}
@@ -33,11 +10,6 @@ prototype(Sfi.Site:PageObject) < prototype(Page) {
 	body = Neos.Fusion:Value {
 		value = Sfi.Site:Body
 		# Don't be surprised, this is appended in @process in Page prototype
-		javascripts.index = Neos.Fusion:Tag {
-			tagName = 'script'
-			attributes.src = Neos.Fusion:ResourceUri {
-				path = 'resource://Sfi.Site/Public/built/index.js'
-			}
-		}
+		javascripts.footerTags = Sfi.Site:FooterTags
 	}
 }
