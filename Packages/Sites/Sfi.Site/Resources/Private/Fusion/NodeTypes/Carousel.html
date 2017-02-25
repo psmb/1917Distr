@@ -1,7 +1,7 @@
 <div class="r" data-animationappear="off" data-record-type="310" id="rec14357096" style="">
 	<div class="t309">
 		<div style="width:100%; margin: 0 auto;">
-			<div class="carousel slide" data-interval="false" data-ride="carousel" id="{node.name}" style="height:600px;">
+			<div class="Carousel {f:if(condition: isWhite, then: 'Carousel--white')} carousel slide" data-interval="false" data-ride="carousel" id="{node.name}" style="height:600px;">
 				<f:if condition="{showDots}">
 					<ol class="carousel-indicators">
 						{slidesNav -> f:format.raw()}
@@ -22,3 +22,8 @@
 		</div>
 	</div>
 </div>
+<style>
+.Carousel--white * {
+	color: white !important;
+}
+</style>
