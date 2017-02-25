@@ -1,6 +1,6 @@
 prototype(Sfi.Site:PageObject) < prototype(Page) {
 	head {
-		titleTag.content = ${String.stripTags(q(node).property('title')) + ' | ' + Translation.translate('global.shorttitle', null, [], null, 'Sfi.Site')}
+		titleTag.content = ${String.stripTags(q(node).property('title'))}
 		headTags = Sfi.Site:HeadTags
 	}
 	htmlTag.attributes.lang = ${Array.first(node.context.dimensions.language)}
@@ -11,5 +11,6 @@ prototype(Sfi.Site:PageObject) < prototype(Page) {
 		value = Sfi.Site:Body
 		# Don't be surprised, this is appended in @process in Page prototype
 		javascripts.footerTags = Sfi.Site:FooterTags
+		javascripts.analytics = Sfi.Site:Analytics
 	}
 }

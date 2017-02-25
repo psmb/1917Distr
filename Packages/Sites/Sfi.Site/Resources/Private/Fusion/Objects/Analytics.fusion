@@ -1,0 +1,4 @@
+prototype(Sfi.Site:Analytics) < prototype(Neos.Fusion:Template) {
+	templatePath = 'resource://Sfi.Site/Private/Fusion/Objects/Analytics.html'
+	@if.live = ${node.context.workspaceName == 'live'}
+}
