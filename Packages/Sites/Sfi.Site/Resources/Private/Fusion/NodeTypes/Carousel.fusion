@@ -3,7 +3,7 @@ prototype(Sfi.Site:Carousel) {
 	slides = ContentCollectionRenderer
 	slidesNav = Neos.Fusion:Collection {
 		collection = ${q(node).children().get()}
-		itemName = 'node'
+		itemName = 'item'
 		itemRenderer = Neos.Fusion:Tag {
 			tagName = 'li'
 			attributes {
