@@ -1,0 +1,10 @@
+prototype(Sfi.Site:Headline) < prototype(Neos.Fusion:Tag) {
+	attributes.class = 't-heading t-heading_sm'
+	content = Neos.Fusion:Tag {
+		content = ${q(node).property('text')}
+		@process.contentElementEditable = ContentElementEditable {
+			property = 'text'
+		}
+	}
+	@process.contentElementWrapping = ContentElementWrapping
+}

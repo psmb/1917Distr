@@ -1,0 +1,32 @@
+'Sfi.Site:Headline':
+  superTypes:
+    'Neos.Neos:Content': true
+  ui:
+    label: 'Маленький такой заголовок'
+    icon: icon-header
+  properties:
+    text:
+      type: string
+      ui:
+        inlineEditable: true
+        aloha:
+          placeholder: '<h2>Введите текст</h2>'
+          format:
+            strong: false
+            em: false
+            u: false
+            sub: false
+            sup: false
+            del: false
+            p: false
+            h1: false
+            h2: true
+            h3: true
+            pre: false
+            removeFormat: true
+          table:
+            table: false
+          list: {  }
+          link:
+            a: true
+          alignment: {  }
