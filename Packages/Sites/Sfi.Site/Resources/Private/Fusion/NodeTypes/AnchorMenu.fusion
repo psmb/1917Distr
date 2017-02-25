@@ -5,7 +5,7 @@ prototype(Sfi.Site:AnchorMenu) {
 		itemRenderer = Neos.Fusion:Tag {
 			tagName = 'li'
 			attributes.class = 't229__list_item'
-			attributes.style = 'color:#ffffff;font-size:13px;font-weight:700;text-transform:uppercase;'
+			attributes.style = 'color:#ffffff;font-weight:700;text-transform:uppercase;'
 			content = Neos.Fusion:Tag {
 				tagName = 'a'
 				attributes.class = 't-menu__link-item'
