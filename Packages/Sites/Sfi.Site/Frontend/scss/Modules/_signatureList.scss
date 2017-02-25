@@ -1,0 +1,22 @@
+.SignatureList {
+	max-height: 300px;
+	overflow-y: scroll;
+	overflow-wrap: break-word;
+	padding-right: $u;
+}
+
+.SignatureList::-webkit-scrollbar-track
+{
+	background-color: #F5F5F5;
+}
+
+.SignatureList::-webkit-scrollbar
+{
+	width: 10px;
+	background-color: #F5F5F5;
+}
+
+.SignatureList::-webkit-scrollbar-thumb
+{
+	background-color: #eb443c;
+}

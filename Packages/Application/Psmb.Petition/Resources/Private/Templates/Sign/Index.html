@@ -1,62 +1,64 @@
-<div id="rec14606606" class="r r_anim r_showed" style="padding-top:0px;padding-bottom:54px; " data-record-type="214">
-	<div class="t186B">
-		<f:form
-			method="post"
-			action="sign"
-			controller="Sign"
-			package="Psmb.Petition"
-			id="petition-form" name="form14606606"
-		>
-			<div>
-				<f:flashMessages />
-				<div id="petition-form-error" style="display: none; color: red;" class="t-text t-text_md">Введите ваше имя</div>
-			</div>
-			<div class="row">
-				<div class="small-12 medium-4 columns paddingVertical-single">
-					<f:form.textfield name="name" id="petition-form-name" class="t186B__input t-input js-tilda-rule" placeholder="Имя и фамилия" style="color:#000000; border:1px solid #adadad; border-radius: 0px; -moz-border-radius: 0px; -webkit-border-radius: 0px;"/>
+<div id="petition-whole-form">
+	<div field="text" class="t-text t-text_md paddingVertical-single textAlign-center"><strong>Я готов присоединиться:</strong></div>
+	<div id="rec14606606" class="r r_anim r_showed" style="padding-top:0px;padding-bottom:54px; " data-record-type="214">
+		<div class="t186B">
+			<f:form
+				method="post"
+				action="sign"
+				controller="Sign"
+				package="Psmb.Petition"
+				id="petition-form" name="form14606606"
+			>
+				<div>
+					<f:flashMessages />
+					<div id="petition-form-error" style="display: none; color: red;" class="t-text t-text_md">Введите ваше имя</div>
 				</div>
-				<div class="small-12 medium-4 columns paddingVertical-single">
-					<f:form.textfield name="email" class="t186B__input t-input js-tilda-rule" placeholder="E-mail" style="color:#000000; border:1px solid #adadad; border-radius: 0px; -moz-border-radius: 0px; -webkit-border-radius: 0px;"/>
+				<div class="row">
+					<div class="small-12 medium-4 columns paddingVertical-single">
+						<f:form.textfield name="name" id="petition-form-name" class="t186B__input t-input js-tilda-rule" placeholder="Имя и фамилия" style="color:#000000; border:1px solid #adadad; border-radius: 0px; -moz-border-radius: 0px; -webkit-border-radius: 0px;"/>
+					</div>
+					<div class="small-12 medium-4 columns paddingVertical-single">
+						<f:form.textfield name="email" class="t186B__input t-input js-tilda-rule" placeholder="E-mail" style="color:#000000; border:1px solid #adadad; border-radius: 0px; -moz-border-radius: 0px; -webkit-border-radius: 0px;"/>
+					</div>
+					<div class="small-12 medium-4 columns paddingVertical-single">
+						<f:form.textfield name="place" class="t186B__input t-input js-tilda-rule" placeholder="Город" style="color:#000000; border:1px solid #adadad; border-radius: 0px; -moz-border-radius: 0px; -webkit-border-radius: 0px;"/>
+					</div>
 				</div>
-				<div class="small-12 medium-4 columns paddingVertical-single">
-					<f:form.textfield name="place" class="t186B__input t-input js-tilda-rule" placeholder="Город" style="color:#000000; border:1px solid #adadad; border-radius: 0px; -moz-border-radius: 0px; -webkit-border-radius: 0px;"/>
-				</div>
-			</div>
-      <div class="row">
-        <div class="small-12 medium-8 columns paddingVertical-single">
-          <f:form.textfield name="comment" class="t186B__input t-input js-tilda-rule" placeholder="Почему для вас важно присоединиться к акции" style="color:#000000; border:1px solid #adadad; border-radius: 0px; -moz-border-radius: 0px; -webkit-border-radius: 0px;"/>
-        </div>
-        <div class="small-12 medium-4 columns paddingVertical-single">
-          <f:form.textfield name="about" class="t186B__input t-input js-tilda-rule" placeholder="Немного о себе" style="color:#000000; border:1px solid #adadad; border-radius: 0px; -moz-border-radius: 0px; -webkit-border-radius: 0px;"/>
-        </div>
-      </div>
-      <div class="row paddingVertical-single">
-        <div class="columns">
-          <f:form.submit class="t-submit"	style="width: 100%; color:#ffffff;background-color:#eb443c;border-radius:0px; -moz-border-radius:0px; -webkit-border-radius:0px;" value="Присоединиться"/>
-        </div>
-      </div>
-		</f:form>
+	      <div class="row">
+	        <div class="small-12 medium-8 columns paddingVertical-single">
+	          <f:form.textfield name="comment" class="t186B__input t-input js-tilda-rule" placeholder="Почему для вас важно присоединиться к акции" style="color:#000000; border:1px solid #adadad; border-radius: 0px; -moz-border-radius: 0px; -webkit-border-radius: 0px;"/>
+	        </div>
+	        <div class="small-12 medium-4 columns paddingVertical-single">
+	          <f:form.textfield name="about" class="t186B__input t-input js-tilda-rule" placeholder="Немного о себе" style="color:#000000; border:1px solid #adadad; border-radius: 0px; -moz-border-radius: 0px; -webkit-border-radius: 0px;"/>
+	        </div>
+	      </div>
+	      <div class="row paddingVertical-single">
+	        <div class="columns">
+	          <f:form.submit class="t-submit"	style="width: 100%; color:#ffffff;background-color:#eb443c;border-radius:0px; -moz-border-radius:0px; -webkit-border-radius:0px;" value="Присоединиться"/>
+	        </div>
+	      </div>
+			</f:form>
+		</div>
+		<style>
+			#rec14606606 input::-webkit-input-placeholder {
+				color: #000000;
+				opacity: 0.5;
+			}
+			#rec14606606 input::-moz-placeholder {
+				color: #000000;
+				opacity: 0.5;
+			}
+			#rec14606606 input:-moz-placeholder {
+				color: #000000;
+				opacity: 0.5;
+			}
+			#rec14606606 input:-ms-input-placeholder {
+				color: #000000;
+				opacity: 0.5;
+			}
+		</style>
 	</div>
-	<style>
-		#rec14606606 input::-webkit-input-placeholder {
-			color: #000000;
-			opacity: 0.5;
-		}
-		#rec14606606 input::-moz-placeholder {
-			color: #000000;
-			opacity: 0.5;
-		}
-		#rec14606606 input:-moz-placeholder {
-			color: #000000;
-			opacity: 0.5;
-		}
-		#rec14606606 input:-ms-input-placeholder {
-			color: #000000;
-			opacity: 0.5;
-		}
-	</style>
 </div>
-
 
 <div class="Modal" style="display:none" id="petition-modal">
 	<div class="Modal-bg" style="background-color:black;opacity:0.8;position:fixed; height:100%;top:0;left:0;right:0;z-index:1000"></div>
@@ -69,7 +71,8 @@
 				</svg>
 			</div>
 			<div class="t203__title t-title t-title_xs" field="title">Благодарим вас за участие</div>
-			<div class="t203__text t-text t-text_md" field="text">Если вы оставили свой e-mail, мы сообщим вам о ближайших событиях акции.
+			<div class="t203__text t-text t-text_md" field="text">
+				После премодерации ваш отзыв появится на сайте.
 				<br>
 				<br> Вы можете поделиться информацией об акции в своих социальных сетях:
 				<br>
@@ -100,6 +103,7 @@
 
 <script>
 var petitionFormClose = document.getElementById("petition-modal-close");
+var wholePetition = document.getElementById("petition-whole-form");
 var petitionForm = document.getElementById("petition-form");
 petitionFormClose.addEventListener("click", petitionCloseDialog);
 petitionForm.addEventListener("submit", submitForm, false);
@@ -127,6 +131,7 @@ function submitForm (e) {
 	var request = new XMLHttpRequest();
 	request.open("POST", petitionForm.action);
 	request.onload = function () {
+		wholePetition.innerHTML = '<div class="paddingVertical-triple t-text t-text_md" style="font-weight: bold; color: #eb443c;">Благодарим вас за участие в акции. Ваш комментарий появится ниже после премодерации.</div>';
 		document.getElementById("petition-modal").style.display = 'block';
 	};
 	request.send(new FormData(petitionForm));

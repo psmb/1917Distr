@@ -3,7 +3,6 @@ prototype(Psmb.Petition:SignPlugin) < prototype(Plugin) {
 	controller = 'Sign'
 	argumentNamespace = 'sign-petition'
 	@process.add = Neos.Fusion:Array {
-		1 = '<div field="text" class="t-text t-text_md paddingVertical-single textAlign-center"><strong>Я готов присоединиться:</strong></div>'
 		2 = ${value}
 		3 = '<h2 class="t-title t-title_sm">К акции присоединились:</h2>'
 		4 = Psmb.Petition:List
@@ -11,6 +10,7 @@ prototype(Psmb.Petition:SignPlugin) < prototype(Plugin) {
 }
 
 prototype(Psmb.Petition:List) < prototype(Neos.Fusion:Collection) {
+	@process.tmpl = ${'<div class="SignatureList">' + value + '</div>'}
 	itemName = 'node'
 	collection = ${Array.reverse(q(documentNode).children('petitions').children('[instanceof Psmb.Petition:Signature]').get())}
 	itemRenderer = Psmb.Petition:Signature
