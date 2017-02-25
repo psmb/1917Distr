@@ -5,6 +5,8 @@ Neos:
       inactivityTimeout: 604800
     i18n:
       defaultLocale: ru
+    http:
+      baseUri: 'https://pokayanie1917.ru/'
   Neos:
     userInterface:
       defaultLanguage: ru
