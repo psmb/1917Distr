@@ -2,7 +2,7 @@
   superTypes:
     'Neos.Neos:Content': true
   ui:
-    label: 'Якорь главного меню'
+    label: 'Якорь меню'
     inlineEditable: true
     inspector:
       groups:
