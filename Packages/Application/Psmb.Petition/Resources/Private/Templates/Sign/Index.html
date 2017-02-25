@@ -72,7 +72,7 @@
 			</div>
 			<div class="t203__title t-title t-title_xs" field="title">Благодарим вас за участие</div>
 			<div class="t203__text t-text t-text_md" field="text">
-				После премодерации ваш отзыв появится на сайте.
+				После премодерации ваша подпись появится на сайте.
 				<br>
 				<br> Вы можете поделиться информацией об акции в своих социальных сетях:
 				<br>
@@ -131,7 +131,7 @@ function submitForm (e) {
 	var request = new XMLHttpRequest();
 	request.open("POST", petitionForm.action);
 	request.onload = function () {
-		wholePetition.innerHTML = '<div class="paddingVertical-triple t-text t-text_md" style="font-weight: bold; color: #eb443c;">Благодарим вас за участие в акции. Ваш комментарий появится ниже после премодерации.</div>';
+		wholePetition.innerHTML = '<div class="paddingVertical-triple t-text t-text_md" style="font-weight: bold; color: #eb443c;">Благодарим вас за участие в акции. Ваша подпись появится ниже после премодерации.</div>';
 		document.getElementById("petition-modal").style.display = 'block';
 	};
 	request.send(new FormData(petitionForm));
