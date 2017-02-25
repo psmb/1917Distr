@@ -20,5 +20,8 @@ prototype(Sfi.Site:Quote) {
 	}
 	imageUri = Psmb.NodeTypes:ImageUri {
 		@context.asset = ${node.properties.image}
+		@context.width = 160
+		@context.height = 160
+		@context.allowCropping = ${true}
 	}
 }

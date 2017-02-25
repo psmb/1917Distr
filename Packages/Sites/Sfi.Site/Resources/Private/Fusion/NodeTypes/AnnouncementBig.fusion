@@ -21,6 +21,7 @@ prototype(Sfi.Site:AnnouncementBig) {
 	}
 	imageUri = Psmb.NodeTypes:ImageUri {
 		@context.asset = ${node.properties.image}
+		@context.maximumWidth = 1920
 	}
 
 	link = ${node.properties.link}

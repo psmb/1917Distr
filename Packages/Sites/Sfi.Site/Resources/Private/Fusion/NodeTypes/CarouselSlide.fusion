@@ -7,5 +7,6 @@ prototype(Sfi.Site:CarouselSlide) {
 
 	imageUri = ImageUri {
 		asset = ${node.properties.image}
+		@context.maximumWidth = 1920
 	}
 }

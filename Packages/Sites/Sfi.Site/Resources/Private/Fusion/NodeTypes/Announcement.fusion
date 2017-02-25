@@ -20,6 +20,7 @@ prototype(Sfi.Site:Announcement) {
 	}
 	imageUri = Psmb.NodeTypes:ImageUri {
 		@context.asset = ${node.properties.image}
+		@context.maximumWidth = 960
 	}
 
 	attributes {

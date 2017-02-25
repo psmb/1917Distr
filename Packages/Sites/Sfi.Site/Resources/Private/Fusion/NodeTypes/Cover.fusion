@@ -4,5 +4,6 @@ prototype(Sfi.Site:Cover) {
 
 	imageUri = Psmb.NodeTypes:ImageUri {
 		@context.asset = ${node.properties.image}
+		@context.maximumWidth = 1920
 	}
 }
