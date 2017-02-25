@@ -1,0 +1,12 @@
+.AnchorMenu {
+	padding: 2*$u 0;
+	text-align: center;
+	@include breakpoint(medium up) {
+		display: flex;
+		justify-content: center;
+	}
+}
+
+.AnchorMenu-item {
+	padding: $u 2*$u;
+}

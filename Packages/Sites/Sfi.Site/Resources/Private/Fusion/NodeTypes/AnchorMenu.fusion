@@ -3,9 +3,8 @@ prototype(Sfi.Site:AnchorMenu) {
 	menu = Neos.Fusion:Collection {
 		collection = ${q(documentNode).find('[instanceof Sfi.Site:Anchor]').filter('[isSecondary = true]').get()}
 		itemRenderer = Neos.Fusion:Tag {
-			tagName = 'li'
-			attributes.class = 't229__list_item'
-			attributes.style = 'color:#ffffff;font-weight:700;text-transform:uppercase;'
+			attributes.class = 'AnchorMenu-item'
+			attributes.style = 'font-family: Roboto,sans-serif;white-space: nowrap;font-size: 16px;color:#ffffff;font-weight:700;text-transform:uppercase;'
 			content = Neos.Fusion:Tag {
 				tagName = 'a'
 				attributes.class = 't-menu__link-item'

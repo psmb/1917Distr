@@ -1,5 +1,7 @@
 .Details {
-	margin: 0 -2*$u;
+	@include breakpoint(medium up) {
+		margin: 0 -2*$u;
+	}
 	padding: 2*$u;
 	border: 1px solid #adadad;
 }
