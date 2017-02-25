@@ -17,4 +17,25 @@ prototype(Psmb.Petition:List) < prototype(Neos.Fusion:Collection) {
 }
 
 prototype(Psmb.Petition:Signature) {
+	name = Neos.Fusion:Tag {
+		tagName = 'span'
+		content = ${q(node).property('name')}
+		@process.contentElementEditable = ContentElementEditable {
+			property = 'name'
+		}
+	}
+	place = Neos.Fusion:Tag {
+		tagName = 'span'
+		content = ${q(node).property('place')}
+		@process.contentElementEditable = ContentElementEditable {
+			property = 'place'
+		}
+	}
+	about = Neos.Fusion:Tag {
+		tagName = 'span'
+		content = ${q(node).property('about')}
+		@process.contentElementEditable = ContentElementEditable {
+			property = 'about'
+		}
+	}
 }
