@@ -17,7 +17,7 @@
         inspector:
           group: anchor
     isSecondary:
-      type: bool
+      type: boolean
       ui:
         label: 'Второстепенное меню?'
         inspector:

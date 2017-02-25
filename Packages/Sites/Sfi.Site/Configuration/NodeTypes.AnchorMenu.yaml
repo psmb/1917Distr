@@ -1,0 +1,5 @@
+'Sfi.Site:AnchorMenu':
+  superTypes:
+    'Neos.Neos:Content': true
+  ui:
+    label: 'Второстепенное меню'
