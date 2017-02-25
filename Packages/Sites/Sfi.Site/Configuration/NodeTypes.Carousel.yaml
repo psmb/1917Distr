@@ -5,7 +5,40 @@
   ui:
     label: 'Карусель'
     inlineEditable: true
+    inspector:
+      groups:
+        carousel:
+          label: Карусель
   constraints:
     nodeTypes:
       '*': false
       'Sfi.Site:CarouselSlide': true
+  properties:
+    color:
+      type: string
+      ui:
+        label: 'Цвет управляющего элемента'
+        reloadIfChanged: true
+        inspector:
+          group: carousel
+          editor: Neos.Neos/Inspector/Editors/SelectBoxEditor
+          editorOptions:
+            values:
+              black:
+                label: 'Черный'
+              white:
+                label: 'Белый'
+    showArrows:
+      type: boolean
+      ui:
+        label: 'Показывать стрелочки?'
+        reloadIfChanged: true
+        inspector:
+          group: carousel
+    showDots:
+      type: boolean
+      ui:
+        label: 'Показывать точечки?'
+        reloadIfChanged: true
+        inspector:
+          group: carousel

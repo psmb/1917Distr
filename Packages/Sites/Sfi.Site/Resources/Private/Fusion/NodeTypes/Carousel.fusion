@@ -7,7 +7,7 @@ prototype(Sfi.Site:Carousel) {
 		itemRenderer = Neos.Fusion:Tag {
 			tagName = 'li'
 			attributes {
-				class = ${iterator.isFirst ? 'white active' : 'white'}
+				class = ${(iterator.isFirst && 'active') + ' ' + (node.properties.color == 'white' && 'white')}
 				data-slide-to = ${iterator.index}
 				data-target = ${'#' + node.name}
 			}
