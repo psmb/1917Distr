@@ -1,5 +1,7 @@
 prototype(Sfi.Site:Carousel) {
 	templatePath = 'resource://Sfi.Site/Private/Fusion/NodeTypes/Carousel.html'
+	@context.isWhite = ${node.properties.color == 'white'}
+	isWhite = ${isWhite}
 	slides = ContentCollectionRenderer
 	slidesNav = Neos.Fusion:Collection {
 		collection = ${q(node).children().get()}
@@ -7,7 +9,7 @@ prototype(Sfi.Site:Carousel) {
 		itemRenderer = Neos.Fusion:Tag {
 			tagName = 'li'
 			attributes {
-				class = ${(iterator.isFirst && 'active') + ' ' + (node.properties.color == 'white' && 'white')}
+				class = ${(iterator.isFirst && 'active') + ' ' + (isWhite && 'white')}
 				data-slide-to = ${iterator.index}
 				data-target = ${'#' + node.name}
 			}

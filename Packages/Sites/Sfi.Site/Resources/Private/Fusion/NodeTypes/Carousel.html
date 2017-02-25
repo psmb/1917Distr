@@ -12,10 +12,10 @@
 				</div>
 				<f:if condition="{showArrows}">
 					<a class="left carousel-control" data-slide="prev" href="#{node.name}">
-						<span class="{f:if(condition: 'color == "white"', then: 'carousel-control-left-white', else: 'carousel-control-left')}" style="top:42%;"></span>
+						<span class="{f:if(condition: isWhite, then: 'carousel-control-left-white', else: 'carousel-control-left')}" style="top:42%;"></span>
 					</a>
 					<a class="right carousel-control" data-slide="next" href="#{node.name}">
-						<span class="{f:if(condition: 'color == "white"', then: 'carousel-control-right-white', else: 'carousel-control-right')}" style="top:42%;"></span>
+						<span class="{f:if(condition: isWhite, then: 'carousel-control-right-white', else: 'carousel-control-right')}" style="top:42%;"></span>
 					</a>
 				</f:if>
 			</div>
