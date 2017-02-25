@@ -5,7 +5,7 @@ prototype(Sfi.Site:CarouselSlide) {
 	}
 	content = ContentCollectionRenderer
 
-	imageUri = Psmb.NodeTypes:ImageUri {
-		@context.asset = ${node.properties.image}
+	imageUri = ImageUri {
+		asset = ${node.properties.image}
 	}
 }
