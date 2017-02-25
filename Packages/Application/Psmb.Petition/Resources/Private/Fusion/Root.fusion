@@ -12,7 +12,7 @@ prototype(Psmb.Petition:SignPlugin) < prototype(Plugin) {
 
 prototype(Psmb.Petition:List) < prototype(Neos.Fusion:Collection) {
 	itemName = 'node'
-	collection = ${q(documentNode).children('petitions').children('[instanceof Psmb.Petition:Signature]').get()}
+	collection = ${Array.reverse(q(documentNode).children('petitions').children('[instanceof Psmb.Petition:Signature]').get())}
 	itemRenderer = Psmb.Petition:Signature
 }
 
