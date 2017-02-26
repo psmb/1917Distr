@@ -1,11 +1,12 @@
-prototype(Psmb.Petition:SignPlugin) < prototype(Plugin) {
-	package = 'Psmb.Petition'
-	controller = 'Sign'
-	argumentNamespace = 'sign-petition'
-	@process.add = Neos.Fusion:Array {
-		2 = ${value}
-		3 = '<h2 class="t-title t-title_sm">К акции присоединились:</h2>'
-		4 = Psmb.Petition:List
+prototype(Psmb.Petition:SignPlugin) < prototype(Neos.Fusion:Value) {
+	value = Neos.Fusion:Array {
+		1 = Plugin {
+			package = 'Psmb.Petition'
+			controller = 'Sign'
+			argumentNamespace = 'sign-petition'
+		}
+		2 = '<h2 class="t-title t-title_sm">К акции присоединились:</h2>'
+		3 = Psmb.Petition:List
 	}
 }
 
@@ -14,6 +15,12 @@ prototype(Psmb.Petition:List) < prototype(Neos.Fusion:Collection) {
 	itemName = 'node'
 	collection = ${Array.reverse(q(documentNode).children('petitions').children('[instanceof Psmb.Petition:Signature]').get())}
 	itemRenderer = Psmb.Petition:Signature
+
+	@cache {
+		mode = 'cached'
+		entryIdentifier.node = ${node}
+		entryTags.1 = 'NodeType_Psmb.Petition:Signature'
+	}
 }
 
 prototype(Psmb.Petition:Signature) {
