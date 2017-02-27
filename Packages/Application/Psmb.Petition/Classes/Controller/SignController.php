@@ -64,11 +64,11 @@ class SignController extends ActionController
                 $rootNode = $this->context->getNode('/sites/site/petitions');
                 $nodeTemplate = new \Neos\ContentRepository\Domain\Model\NodeTemplate();
                 $nodeTemplate->setNodeType($this->nodeTypeManager->getNodeType('Psmb.Petition:Signature'));
-                $nodeTemplate->setProperty('name', $name);
-                $nodeTemplate->setProperty('email', $email);
-                $nodeTemplate->setProperty('place', $place);
-                $nodeTemplate->setProperty('comment', $comment);
-                $nodeTemplate->setProperty('about', $about);
+                $nodeTemplate->setProperty('name', strip_tags($name));
+                $nodeTemplate->setProperty('email', strip_tags($email));
+                $nodeTemplate->setProperty('place', strip_tags($place));
+                $nodeTemplate->setProperty('comment', strip_tags($comment));
+                $nodeTemplate->setProperty('about', strip_tags($about));
                 $node = $rootNode->createNodeFromTemplate($nodeTemplate);
                 $node->setHidden(true);
                 $this->addFlashMessage("Cпасибо!");
