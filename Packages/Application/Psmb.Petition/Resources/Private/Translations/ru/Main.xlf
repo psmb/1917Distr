@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file original="" source-language="ru" datatype="plaintext">
+        <body>
+            <group id="numberJoined" restype="x-gettext-plurals">
+                <trans-unit id="numberJoined[0]">
+                    <source><![CDATA[К акции присоединился <span style="color: #eb443c">{0}</span>&nbsp;человек]]></source>
+                </trans-unit>
+                <trans-unit id="numberJoined[1]">
+                    <source><![CDATA[К акции присоединились <span style="color: #eb443c">{0}</span>&nbsp;человека]]></source>
+                </trans-unit>
+                <trans-unit id="numberJoined[2]">
+                    <source><![CDATA[К акции присоединились <span style="color: #eb443c">{0}</span>&nbsp;человек]]></source>
+                </trans-unit>
+            </group>
+        </body>
+    </file>
+</xliff>

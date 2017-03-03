@@ -1,27 +1,32 @@
 prototype(Psmb.Petition:SignPlugin) < prototype(Neos.Fusion:Value) {
+	@context.signatures = ${q(documentNode).children('petitions').children('[instanceof Psmb.Petition:Signature]')}
 	value = Neos.Fusion:Array {
+		@context.count = ${signatures.count()}
 		1 = Plugin {
 			package = 'Psmb.Petition'
 			controller = 'Sign'
 			argumentNamespace = 'sign-petition'
 		}
-		2 = '<h2 class="t-title t-title_sm">К акции присоединились:</h2>'
-		3 = Psmb.Petition:List
+		2 = ${'<h2 class="t-title t-title_sm">' + Translation.translate('numberJoined', null, [count], null, 'Psmb.Petition', count) + '</h2>'}
+		3 = ContentCollection {
+			@context.node = ${q(site).children('quotes').get(0)}
+			nodePath = 'quotes'
+		}
+		4 = Neos.Fusion:Collection {
+			count = ${signatures.count()}
+			@process.tmpl = ${'<div class="SignatureList">' + value + '</div>'}
+			itemName = 'node'
+			collection = ${Array.reverse(signatures.get())}
+			itemRenderer = Psmb.Petition:Signature
+		}
 	}
-}
-
-prototype(Psmb.Petition:List) < prototype(Neos.Fusion:Collection) {
-	@process.tmpl = ${'<div class="SignatureList">' + value + '</div>'}
-	itemName = 'node'
-	collection = ${Array.reverse(q(documentNode).children('petitions').children('[instanceof Psmb.Petition:Signature]').get())}
-	itemRenderer = Psmb.Petition:Signature
-
 	@cache {
 		mode = 'cached'
 		entryIdentifier.node = ${node}
 		entryTags.1 = 'NodeType_Psmb.Petition:Signature'
 	}
 }
+
 
 prototype(Psmb.Petition:Signature) {
 	name = Neos.Fusion:Tag {
@@ -45,4 +50,5 @@ prototype(Psmb.Petition:Signature) {
 			property = 'about'
 		}
 	}
+	inBackend = ${node.context.inBackend}
 }
