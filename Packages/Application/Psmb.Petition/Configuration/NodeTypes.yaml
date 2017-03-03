@@ -23,6 +23,12 @@
       type: 'string'
     about:
       type: 'string'
+    selected:
+      type: 'boolean'
+      ui:
+        label: 'Хорошая цитата, в карусель!'
+        inspector:
+          group: signature
     email:
       type: 'string'
       ui:

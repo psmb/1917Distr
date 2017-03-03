@@ -2,6 +2,7 @@ prototype(Sfi.Site:CarouselSlide) {
 	templatePath = 'resource://Sfi.Site/Private/Fusion/NodeTypes/CarouselSlide.html'
 	attributes {
 		class = ${iterator.isFirst ? 'item active' : 'item'}
+		style = 'height:600px'
 	}
 	content = ContentCollectionRenderer
 

@@ -8,12 +8,25 @@ prototype(Psmb.Petition:SignPlugin) < prototype(Neos.Fusion:Value) {
 			argumentNamespace = 'sign-petition'
 		}
 		2 = ${'<h2 class="t-title t-title_sm">' + Translation.translate('numberJoined', null, [count], null, 'Psmb.Petition', count) + '</h2>'}
-		3 = ContentCollection {
-			@context.node = ${q(site).children('quotes').get(0)}
-			nodePath = 'quotes'
+		3 = Sfi.Site:Carousel {
+			isWhite = ${false}
+			showDots = ${true}
+			showArrows = ${true}
+			slides = Neos.Fusion:Collection {
+				collection = ${count > 0 && signatures.filter('[selected = TRUE]').get()}
+				itemName = 'node'
+				itemRenderer = Sfi.Site:CarouselSlide {
+					attributes.style = 'height:400px'
+					content = Psmb.Petition:SignatureSelected {
+						@process.tm = ${'<div style="padding: 0 50px">' + value + '</div>'}
+					}
+					@process.contentElementWrapping>
+				}
+			}
+			slidesNav.collection = ${count > 0 && signatures.filter('[selected = TRUE]').get()}
+			@process.tmpl = ${'<div class="">' + value + '</div>'}
 		}
 		4 = Neos.Fusion:Collection {
-			count = ${signatures.count()}
 			@process.tmpl = ${'<div class="SignatureList">' + value + '</div>'}
 			itemName = 'node'
 			collection = ${Array.reverse(signatures.get())}
@@ -27,6 +40,14 @@ prototype(Psmb.Petition:SignPlugin) < prototype(Neos.Fusion:Value) {
 	}
 }
 
+
+prototype(Psmb.Petition:SignatureSelected) < prototype(Neos.Fusion:Template) {
+	templatePath = 'resource://Psmb.Petition/Private/Templates/NodeTypes/SignatureSelected.html'
+	name = ${node.properties.name}
+	place = ${node.properties.place}
+	about = ${node.properties.about}
+	comment = ${node.properties.comment}
+}
 
 prototype(Psmb.Petition:Signature) {
 	name = Neos.Fusion:Tag {
