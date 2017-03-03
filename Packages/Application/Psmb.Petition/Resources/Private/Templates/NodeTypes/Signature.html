@@ -2,8 +2,8 @@
 	<div class="t-descr"><strong>{name -> f:format.raw()}</strong>, {place -> f:format.raw()}</div>
 	<div class="t-descr">{about -> f:format.raw()}</div>
 	<f:if condition="{inBackend}">
-		<div class="t-descr">{email}</div>
+		<div class="t-descr">{email -> f:format.raw()}</div>
 		<br>
-		<div class="t-descr">{comment}</div>
+		<div class="t-descr">{comment -> f:format.raw()}</div>
 	</f:if>
 </div>

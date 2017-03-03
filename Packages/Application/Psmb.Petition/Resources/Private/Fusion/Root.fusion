@@ -71,5 +71,12 @@ prototype(Psmb.Petition:Signature) {
 			property = 'about'
 		}
 	}
+	comment = Neos.Fusion:Tag {
+		tagName = 'span'
+		content = ${q(node).property('comment')}
+		@process.contentElementEditable = ContentElementEditable {
+			property = 'comment'
+		}
+	}
 	inBackend = ${node.context.inBackend}
 }
