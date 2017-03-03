@@ -6,7 +6,5 @@
       type: 'Neos.Neos:ContentCollection'
     petitions:
       type: 'Neos.Neos:ContentCollection'
-    quotes:
-      type: 'Neos.Neos:ContentCollection'
   ui:
     label: 'Обычная страница'
