@@ -13,7 +13,7 @@ prototype(Psmb.Petition:SignPlugin) < prototype(Neos.Fusion:Value) {
 			showDots = ${true}
 			showArrows = ${true}
 			slides = Neos.Fusion:Collection {
-				collection = ${count > 0 && signatures.filter('[selected = TRUE]').get()}
+				collection = ${count > 0 && Array.reverse(signatures.filter('[selected = TRUE]').get())}
 				itemName = 'node'
 				itemRenderer = Sfi.Site:CarouselSlide {
 					attributes.style = 'height:400px'
@@ -23,7 +23,7 @@ prototype(Psmb.Petition:SignPlugin) < prototype(Neos.Fusion:Value) {
 					@process.contentElementWrapping>
 				}
 			}
-			slidesNav.collection = ${count > 0 && signatures.filter('[selected = TRUE]').get()}
+			slidesNav.collection = ${count > 0 && Array.reverse(signatures.filter('[selected = TRUE]').get())}
 			@process.tmpl = ${'<div class="">' + value + '</div>'}
 		}
 		4 = Neos.Fusion:Collection {
