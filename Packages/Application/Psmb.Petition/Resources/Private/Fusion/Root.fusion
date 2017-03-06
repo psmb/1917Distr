@@ -84,10 +84,16 @@ prototype(Psmb.Petition:Signature) {
 
 root.export {
 	condition = ${request.arguments.export == '1'}
-	renderer = Neos.Fusion:Collection {
-		collection = ${q(documentNode).children('petitions').children('[instanceof Psmb.Petition:Signature]').get()}
-		itemName = 'node'
-		itemRenderer = ${node.properties.name + "|" + node.properties.email + "|" + node.properties.about + "|" + node.properties.comment  + "<br>"}
+	renderer = Neos.Fusion:Http.Message {
+		httpResponseHead.headers.Content-Type = 'text/csv'
+		httpResponseHead.headers.Content-Disposition = 'attachment;filename=myfilename.csv'
+		1 = Neos.Fusion:Collection {
+			collection = ${q(documentNode).children('petitions').children('[instanceof Psmb.Petition:Signature]').get()}
+			itemName = 'node'
+			itemRenderer = Psmb.Petition:SignatureSelected {
+				templatePath = 'resource://Psmb.Petition/Private/Templates/NodeTypes/SignatureExport.html'
+			}
+		}
 	}
 }
 root.@cache.entryIdentifier.export = ${request.arguments.export}
