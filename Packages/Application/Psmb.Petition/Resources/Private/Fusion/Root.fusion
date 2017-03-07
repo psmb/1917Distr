@@ -92,6 +92,7 @@ root.export {
 			itemName = 'node'
 			itemRenderer = Psmb.Petition:SignatureSelected {
 				templatePath = 'resource://Psmb.Petition/Private/Templates/NodeTypes/SignatureExport.html'
+				email = ${node.properties.email}
 			}
 		}
 	}
