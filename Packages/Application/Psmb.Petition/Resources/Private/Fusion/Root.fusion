@@ -10,13 +10,12 @@ prototype(Psmb.Petition:SignPlugin) < prototype(Neos.Fusion:Value) {
 		2 = ${'<h2 class="t-title t-title_sm">' + Translation.translate('numberJoined', null, [count], null, 'Psmb.Petition', count) + '</h2>'}
 		3 = Sfi.Site:Carousel {
 			isWhite = ${false}
-			showDots = ${true}
+			showDots = ${false}
 			showArrows = ${true}
 			slides = Neos.Fusion:Collection {
 				collection = ${count > 0 && Array.reverse(signatures.filter('[selected = TRUE]').get())}
 				itemName = 'node'
 				itemRenderer = Sfi.Site:CarouselSlide {
-					attributes.style = 'height:400px'
 					content = Psmb.Petition:SignatureSelected {
 						@process.tm = ${'<div style="padding: 0 50px">' + value + '</div>'}
 					}

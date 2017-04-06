@@ -1,8 +1,18 @@
 prototype(Sfi.Site:CarouselSlide) {
-	templatePath = 'resource://Sfi.Site/Private/Fusion/NodeTypes/CarouselSlide.html'
+	templatePath = Neos.Fusion:Case {
+		withImage {
+			condition = ${node.properties.image}
+			renderer = 'resource://Sfi.Site/Private/Fusion/NodeTypes/CarouselSlideWithImage.html'
+		}
+		default {
+			condition = ${true}
+			renderer = 'resource://Sfi.Site/Private/Fusion/NodeTypes/CarouselSlide.html'
+		}
+	}
+
+
 	attributes {
 		class = ${iterator.isFirst ? 'item active' : 'item'}
-		style = 'height:600px'
 	}
 	content = ContentCollectionRenderer
 
