@@ -19,10 +19,23 @@
   properties:
     name:
       type: 'string'
+      ui:
+        label: 'Имя'
+        inspector:
+          group: signature
     place:
       type: 'string'
+      ui:
+        label: 'Место'
+        inspector:
+          group: signature
     about:
       type: 'string'
+      ui:
+        label: 'О человеке'
+        inspector:
+          editor: 'Neos.Neos/Inspector/Editors/TextAreaEditor'
+          group: signature
     selected:
       type: 'boolean'
       ui:
@@ -40,4 +53,5 @@
       ui:
         label: Комментарий
         inspector:
+          editor: 'Neos.Neos/Inspector/Editors/TextAreaEditor'
           group: signature

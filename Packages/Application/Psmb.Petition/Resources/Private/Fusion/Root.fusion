@@ -49,34 +49,10 @@ prototype(Psmb.Petition:SignatureSelected) < prototype(Neos.Fusion:Template) {
 }
 
 prototype(Psmb.Petition:Signature) {
-	name = Neos.Fusion:Tag {
-		tagName = 'span'
-		content = ${q(node).property('name')}
-		@process.contentElementEditable = ContentElementEditable {
-			property = 'name'
-		}
-	}
-	place = Neos.Fusion:Tag {
-		tagName = 'span'
-		content = ${q(node).property('place')}
-		@process.contentElementEditable = ContentElementEditable {
-			property = 'place'
-		}
-	}
-	about = Neos.Fusion:Tag {
-		tagName = 'span'
-		content = ${q(node).property('about')}
-		@process.contentElementEditable = ContentElementEditable {
-			property = 'about'
-		}
-	}
-	comment = Neos.Fusion:Tag {
-		tagName = 'span'
-		content = ${q(node).property('comment')}
-		@process.contentElementEditable = ContentElementEditable {
-			property = 'comment'
-		}
-	}
+	name = ${q(node).property('name')}
+	place = ${q(node).property('place')}
+	about = ${q(node).property('about')}
+	comment = ${q(node).property('comment')}
 	inBackend = ${node.context.inBackend}
 }
 
