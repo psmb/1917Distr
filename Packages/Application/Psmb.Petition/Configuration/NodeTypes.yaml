@@ -42,16 +42,16 @@
         label: 'Хорошая цитата, в карусель!'
         inspector:
           group: signature
-    email:
-      type: 'string'
-      ui:
-        label: E-mail
-        inspector:
-          group: signature
     comment:
       type: 'string'
       ui:
         label: Комментарий
         inspector:
           editor: 'Neos.Neos/Inspector/Editors/TextAreaEditor'
+          group: signature
+    email:
+      type: 'string'
+      ui:
+        label: E-mail
+        inspector:
           group: signature
