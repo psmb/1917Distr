@@ -14,6 +14,11 @@ prototype(Psmb.Petition:SignPlugin) < prototype(Neos.Fusion:Value) {
 			collection = Psmb.Petition:SignaturesQuery
 			collection.@process.filter = ${value.filter('[vip = TRUE]').get()}
 			itemRenderer = Psmb.Petition:Signature
+			@cache {
+				mode = 'cached'
+				entryIdentifier.node = ${node}
+				entryTags.1 = 'NodeType_Psmb.Petition:Signature'
+			}
 		}
 		30 = Plugin {
 			package = 'Psmb.Petition'
@@ -47,6 +52,11 @@ prototype(Psmb.Petition:SignPlugin) < prototype(Neos.Fusion:Value) {
 			collection = Psmb.Petition:SignaturesQuery
 			collection.@process.filter = ${Array.reverse(value.filter('[vip != TRUE]').get())}
 			itemRenderer = Psmb.Petition:Signature
+			@cache {
+				mode = 'cached'
+				entryIdentifier.node = ${node}
+				entryTags.1 = 'NodeType_Psmb.Petition:Signature'
+			}
 		}
 	}
 	@cache {
