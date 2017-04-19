@@ -36,6 +36,12 @@
         inspector:
           editor: 'Neos.Neos/Inspector/Editors/TextAreaEditor'
           group: signature
+    vip:
+      type: 'boolean'
+      ui:
+        label: 'VIP, в верхний список'
+        inspector:
+          group: signature
     selected:
       type: 'boolean'
       ui:

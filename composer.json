@@ -21,6 +21,7 @@
 		"sfi/youtube": "*",
 		"sfi/grid": "*",
 		"psmb/nodetypes": "*",
+		"psmb/ajaxify": "*",
 		"opsdev/cache-breaker": "^2.0",
 		"neos/neos-ui": "dev-master",
 		"neos/neos-ui-compiled": "dev-master"

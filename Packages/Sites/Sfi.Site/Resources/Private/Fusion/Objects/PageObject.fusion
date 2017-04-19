@@ -2,6 +2,7 @@ prototype(Sfi.Site:PageObject) < prototype(Page) {
 	head {
 		titleTag.content = ${String.stripTags(q(node).property('title'))}
 		headTags = Sfi.Site:HeadTags
+		ajaxLoader = Psmb.Ajaxify:CssTag
 	}
 	htmlTag.attributes.lang = ${Array.first(node.context.dimensions.language)}
 	bodyTag.attributes.class = 'Page'
@@ -12,5 +13,6 @@ prototype(Sfi.Site:PageObject) < prototype(Page) {
 		# Don't be surprised, this is appended in @process in Page prototype
 		javascripts.footerTags = Sfi.Site:FooterTags
 		javascripts.analytics = Sfi.Site:Analytics
+		javascripts.ajax = Psmb.Ajaxify:JsTag
 	}
 }

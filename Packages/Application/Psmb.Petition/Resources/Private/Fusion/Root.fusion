@@ -1,18 +1,33 @@
+prototype(Psmb.Petition:SignaturesQuery) < prototype(Neos.Fusion:Value) {
+	value = ${q(documentNode).children('petitions').children('[instanceof Psmb.Petition:Signature]')}
+}
+
 prototype(Psmb.Petition:SignPlugin) < prototype(Neos.Fusion:Value) {
-	@context.signatures = ${q(documentNode).children('petitions').children('[instanceof Psmb.Petition:Signature]')}
 	value = Neos.Fusion:Array {
-		@context.count = ${signatures.count()}
-		1 = Plugin {
+		@context.count =  Psmb.Petition:SignaturesQuery
+		@context.count.@process.count = ${value.count()}
+		10 = ${'<h2 class="t-title t-title_sm">' + Translation.translate('petitionSigned', null, [], null, 'Psmb.Petition') + '</h2>'}
+		20 = Neos.Fusion:Collection {
+			@process.tmpl = ${'<div class="SignatureList">' + value + '</div>'}
+			@process.topPetitions = Psmb.Ajaxify:Ajaxify
+			itemName = 'node'
+			collection = Psmb.Petition:SignaturesQuery
+			collection.@process.filter = ${value.filter('[vip = TRUE]').get()}
+			itemRenderer = Psmb.Petition:Signature
+		}
+		30 = Plugin {
 			package = 'Psmb.Petition'
 			controller = 'Sign'
 			argumentNamespace = 'sign-petition'
 		}
-		2 = ${'<h2 class="t-title t-title_sm">' + Translation.translate('numberJoined', null, [count], null, 'Psmb.Petition', count) + '</h2>'}
-		3 = Sfi.Site:Carousel {
+		40 = ${'<h2 class="t-title t-title_sm">' + Translation.translate('numberJoined', null, [count], null, 'Psmb.Petition', count) + '</h2>'}
+		50 = Sfi.Site:Carousel {
+			@context.signatures = Psmb.Petition:SignaturesQuery
 			isWhite = ${false}
 			showDots = ${false}
 			showArrows = ${true}
 			slides = Neos.Fusion:Collection {
+				signatures = Psmb.Petition:SignaturesQuery
 				collection = ${count > 0 && Array.reverse(signatures.filter('[selected = TRUE]').get())}
 				itemName = 'node'
 				itemRenderer = Sfi.Site:CarouselSlide {
@@ -25,10 +40,12 @@ prototype(Psmb.Petition:SignPlugin) < prototype(Neos.Fusion:Value) {
 			slidesNav.collection = ${count > 0 && Array.reverse(signatures.filter('[selected = TRUE]').get())}
 			@process.tmpl = ${'<div class="">' + value + '</div>'}
 		}
-		4 = Neos.Fusion:Collection {
+		60 = Neos.Fusion:Collection {
 			@process.tmpl = ${'<div class="SignatureList">' + value + '</div>'}
+			@process.allPetitions = Psmb.Ajaxify:Ajaxify
 			itemName = 'node'
-			collection = ${Array.reverse(signatures.get())}
+			collection = Psmb.Petition:SignaturesQuery
+			collection.@process.filter = ${Array.reverse(value.filter('[vip != TRUE]').get())}
 			itemRenderer = Psmb.Petition:Signature
 		}
 	}

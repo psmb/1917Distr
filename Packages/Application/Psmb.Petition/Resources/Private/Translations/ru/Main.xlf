@@ -13,6 +13,9 @@
                     <source><![CDATA[К акции присоединились <span style="color: #eb443c">{0}</span>&nbsp;человек]]></source>
                 </trans-unit>
             </group>
+            <trans-unit id="petitionSigned">
+                <source>Обращение подписали</source>
+            </trans-unit>
         </body>
     </file>
 </xliff>
