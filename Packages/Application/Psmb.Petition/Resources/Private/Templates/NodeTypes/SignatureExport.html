@@ -1,1 +1,20 @@
-{name}|{place}|{about}|{email}|{comment}
+{namespace ss}{namespace x}<?xml version="1.0" encoding="UTF-8"?>
+<?mso-application progid="Excel.Sheet"?><Workbook xmlns="urn:schemas-microsoft-com:office:spreadsheet" xmlns:c="urn:schemas-microsoft-com:office:component:spreadsheet" xmlns:html="http://www.w3.org/TR/REC-html40" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet" xmlns:x2="http://schemas.microsoft.com/office/excel/2003/xml" xmlns:x="urn:schemas-microsoft-com:office:excel" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+<ss:Worksheet ss:Name="{country}">
+	<Table>
+		<Column ss:Width="200"/>
+		<Column ss:Width="200"/>
+		<Column ss:Width="100"/>
+		<Row>
+			<Cell><Data ss:Type="String">Name</Data></Cell>
+			<Cell><Data ss:Type="String">Place</Data></Cell>
+			<Cell><Data ss:Type="String">About</Data></Cell>
+			<Cell><Data ss:Type="String">Email</Data></Cell>
+			<Cell><Data ss:Type="String">Comment</Data></Cell>
+		</Row>
+		{items -> f:format.raw()}
+	</Table>
+</ss:Worksheet>
+
+</Workbook>
