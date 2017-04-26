@@ -2,42 +2,35 @@
 	<div field="text" class="t-text t-text_md paddingVertical-single textAlign-center"><strong>Я готов присоединиться:</strong></div>
 	<div id="rec14606606" class="r r_anim r_showed" style="padding-top:0px;padding-bottom:54px; " data-record-type="214">
 		<div class="t186B">
-			<f:form
-				method="post"
-				action="sign"
-				controller="Sign"
-				package="Psmb.Petition"
-				id="petition-form" name="form14606606"
-			>
+			<form method="post" name="form14606606" id="petition-form" action="https://cors-anywhere.herokuapp.com/https://docs.google.com/forms/d/e/1FAIpQLSdsjl5ffpWiYh6V1pwD1r6b3Kva4nHRfavhYdK9_mDgdliZZA/formResponse?embedded=true">
 				<div>
-					<f:flashMessages />
 					<div id="petition-form-error" style="display: none; color: red;" class="t-text t-text_md">Введите ваше имя</div>
 				</div>
 				<div class="row">
 					<div class="small-12 medium-4 columns paddingVertical-single">
-						<f:form.textfield name="name" id="petition-form-name" class="t186B__input t-input js-tilda-rule" placeholder="Имя и фамилия" style="color:#000000; border:1px solid #adadad; border-radius: 0px; -moz-border-radius: 0px; -webkit-border-radius: 0px;"/>
+						<input name="entry.1323080770" placeholder="Имя и фамилия" class="t186B__input t-input js-tilda-rule" id="petition-form-name" style="color:#000000; border:1px solid #adadad; border-radius: 0px; -moz-border-radius: 0px; -webkit-border-radius: 0px;" type="text">
 					</div>
 					<div class="small-12 medium-4 columns paddingVertical-single">
-						<f:form.textfield name="email" class="t186B__input t-input js-tilda-rule" placeholder="E-mail" style="color:#000000; border:1px solid #adadad; border-radius: 0px; -moz-border-radius: 0px; -webkit-border-radius: 0px;"/>
+						<input name="entry.2100953900" placeholder="E-mail" class="t186B__input t-input js-tilda-rule" style="color:#000000; border:1px solid #adadad; border-radius: 0px; -moz-border-radius: 0px; -webkit-border-radius: 0px;" type="text">
 					</div>
 					<div class="small-12 medium-4 columns paddingVertical-single">
-						<f:form.textfield name="place" class="t186B__input t-input js-tilda-rule" placeholder="Город" style="color:#000000; border:1px solid #adadad; border-radius: 0px; -moz-border-radius: 0px; -webkit-border-radius: 0px;"/>
+						<input name="entry.1605820056" placeholder="Город" class="t186B__input t-input js-tilda-rule" style="color:#000000; border:1px solid #adadad; border-radius: 0px; -moz-border-radius: 0px; -webkit-border-radius: 0px;" type="text">
 					</div>
 				</div>
 	      <div class="row">
 	        <div class="small-12 medium-8 columns paddingVertical-single">
-	          <f:form.textfield name="comment" class="t186B__input t-input js-tilda-rule" placeholder="Почему для вас важно присоединиться к акции" style="color:#000000; border:1px solid #adadad; border-radius: 0px; -moz-border-radius: 0px; -webkit-border-radius: 0px;"/>
+	          <input name="entry.748078479" placeholder="Почему для вас важно присоединиться к акции" class="t186B__input t-input js-tilda-rule" style="color:#000000; border:1px solid #adadad; border-radius: 0px; -moz-border-radius: 0px; -webkit-border-radius: 0px;" type="text">
 	        </div>
 	        <div class="small-12 medium-4 columns paddingVertical-single">
-	          <f:form.textfield name="about" class="t186B__input t-input js-tilda-rule" placeholder="Немного о себе" style="color:#000000; border:1px solid #adadad; border-radius: 0px; -moz-border-radius: 0px; -webkit-border-radius: 0px;"/>
+	          <input name="entry.16605890" placeholder="Немного о себе" class="t186B__input t-input js-tilda-rule" style="color:#000000; border:1px solid #adadad; border-radius: 0px; -moz-border-radius: 0px; -webkit-border-radius: 0px;" type="text">
 	        </div>
 	      </div>
 	      <div class="row paddingVertical-single">
 	        <div class="columns">
-	          <f:form.submit class="t-submit"	style="width: 100%; color:#ffffff;background-color:#eb443c;border-radius:0px; -moz-border-radius:0px; -webkit-border-radius:0px;" value="Присоединиться"/>
+	          <input class="t-submit" style="width: 100%; color:#ffffff;background-color:#eb443c;border-radius:0px; -moz-border-radius:0px; -webkit-border-radius:0px;" type="submit" name="" value="Присоединиться">
 	        </div>
 	      </div>
-			</f:form>
+			</form>
 		</div>
 		<style>
 			#rec14606606 input::-webkit-input-placeholder {
@@ -102,11 +95,11 @@
 </style>
 
 <script>
-var petitionFormClose = document.getElementById("petition-modal-close");
-var wholePetition = document.getElementById("petition-whole-form");
-var petitionForm = document.getElementById("petition-form");
-petitionFormClose.addEventListener("click", petitionCloseDialog);
-petitionForm.addEventListener("submit", submitForm, false);
+var petitionFormClose = document.getElementById('petition-modal-close');
+var wholePetition = document.getElementById('petition-whole-form');
+var petitionForm = document.getElementById('petition-form');
+petitionFormClose.addEventListener('click', petitionCloseDialog);
+petitionForm.addEventListener('submit', submitForm, false);
 document.addEventListener('keydown', function (event) {
 	if (event.which === 27) {
 		petitionCloseDialog();
@@ -114,25 +107,25 @@ document.addEventListener('keydown', function (event) {
 }.bind(this));
 
 function petitionCloseDialog() {
-	document.getElementById("petition-modal").style.display = 'none';
+	document.getElementById('petition-modal').style.display = 'none';
 }
 
 function submitForm (e) {
 	e.preventDefault();
-	var nameField = document.getElementById("petition-form-name");
-	var error = document.getElementById("petition-form-error");
+	var nameField = document.getElementById('petition-form-name');
+	var error = document.getElementById('petition-form-error');
 	if(!nameField.value) {
-		nameField.style.border = "2px solid red";
+		nameField.style.border = '2px solid red';
 		error.style.display = 'block';
 		return;
 	}
-	nameField.style.border = "1px solid #adadad";
+	nameField.style.border = '1px solid #adadad';
 	error.style.display = 'none';
 	var request = new XMLHttpRequest();
-	request.open("POST", petitionForm.action);
+	request.open('POST', petitionForm.action);
 	request.onload = function () {
 		wholePetition.innerHTML = '<div class="paddingVertical-triple t-text t-text_md" style="font-weight: bold; color: #eb443c;">Благодарим вас за участие в акции. Ваша подпись появится ниже после премодерации.</div>';
-		document.getElementById("petition-modal").style.display = 'block';
+		document.getElementById('petition-modal').style.display = 'block';
 	};
 	request.send(new FormData(petitionForm));
 }

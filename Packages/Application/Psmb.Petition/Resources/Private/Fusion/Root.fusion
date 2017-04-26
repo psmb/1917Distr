@@ -1,5 +1,5 @@
 prototype(Psmb.Petition:SignaturesQuery) < prototype(Neos.Fusion:Value) {
-	value = ${q(documentNode).children('petitions').children('[instanceof Psmb.Petition:Signature]')}
+	value = ${q(GoogleSheets.get('14anO9UQKBa9lsKbZQcPUt8lDmoFV33W_PXKAOgb5LAI')).filter('[active = "1"]')}
 }
 
 prototype(Psmb.Petition:SignPlugin) < prototype(Neos.Fusion:Value) {
@@ -12,18 +12,15 @@ prototype(Psmb.Petition:SignPlugin) < prototype(Neos.Fusion:Value) {
 			@process.topPetitions = Psmb.Ajaxify:Ajaxify
 			itemName = 'node'
 			collection = Psmb.Petition:SignaturesQuery
-			collection.@process.filter = ${value.filter('[vip = TRUE]').get()}
+			collection.@process.filter = ${value.filter('[VIP = "1"]').get()}
 			itemRenderer = Psmb.Petition:Signature
 			@cache {
 				mode = 'cached'
 				entryIdentifier.node = ${node}
-				entryTags.1 = 'NodeType_Psmb.Petition:Signature'
 			}
 		}
-		30 = Plugin {
-			package = 'Psmb.Petition'
-			controller = 'Sign'
-			argumentNamespace = 'sign-petition'
+		30 = Neos.Fusion:Template {
+			templatePath = 'resource://Psmb.Petition/Private/Templates/NodeTypes/SignForm.html'
 		}
 		40 = ${'<h2 class="t-title t-title_sm">' + Translation.translate('numberJoined', null, [count], null, 'Psmb.Petition', count) + '</h2>'}
 		50 = Sfi.Site:Carousel {
@@ -33,7 +30,7 @@ prototype(Psmb.Petition:SignPlugin) < prototype(Neos.Fusion:Value) {
 			showArrows = ${true}
 			slides = Neos.Fusion:Collection {
 				signatures = Psmb.Petition:SignaturesQuery
-				collection = ${count > 0 && Array.reverse(signatures.filter('[selected = TRUE]').get())}
+				collection = ${count > 0 && Array.reverse(signatures.filter('[selected = "1"]').get())}
 				itemName = 'node'
 				itemRenderer = Sfi.Site:CarouselSlide {
 					content = Psmb.Petition:SignatureSelected {
@@ -42,7 +39,7 @@ prototype(Psmb.Petition:SignPlugin) < prototype(Neos.Fusion:Value) {
 					@process.contentElementWrapping>
 				}
 			}
-			slidesNav.collection = ${count > 0 && Array.reverse(signatures.filter('[selected = TRUE]').get())}
+			slidesNav.collection = ${count > 0 && Array.reverse(signatures.filter('[selected = "1"]').get())}
 			@process.tmpl = ${'<div class="">' + value + '</div>'}
 		}
 		60 = Neos.Fusion:Collection {
@@ -50,56 +47,35 @@ prototype(Psmb.Petition:SignPlugin) < prototype(Neos.Fusion:Value) {
 			@process.allPetitions = Psmb.Ajaxify:Ajaxify
 			itemName = 'node'
 			collection = Psmb.Petition:SignaturesQuery
-			collection.@process.filter = ${Array.reverse(value.filter('[vip != TRUE]').get())}
+			collection.@process.filter = ${Array.reverse(value.filter('[VIP != "1"]').get())}
 			itemRenderer = Psmb.Petition:Signature
 			@cache {
 				mode = 'cached'
 				entryIdentifier.node = ${node}
-				entryTags.1 = 'NodeType_Psmb.Petition:Signature'
 			}
 		}
 	}
 	@cache {
 		mode = 'cached'
 		entryIdentifier.node = ${node}
-		entryTags.1 = 'NodeType_Psmb.Petition:Signature'
 	}
 }
 
 
 prototype(Psmb.Petition:SignatureSelected) < prototype(Neos.Fusion:Template) {
 	templatePath = 'resource://Psmb.Petition/Private/Templates/NodeTypes/SignatureSelected.html'
-	name = ${node.properties.name}
-	place = ${node.properties.place}
-	about = ${node.properties.about}
-	comment = ${node.properties.comment}
+	name = ${node.name}
+	place = ${node.place}
+	about = ${node.about}
+	comment = ${node.comment}
 }
 
-prototype(Psmb.Petition:Signature) {
-	name = ${q(node).property('name')}
-	place = ${q(node).property('place')}
-	about = ${q(node).property('about')}
-	comment = ${q(node).property('comment')}
+prototype(Psmb.Petition:Signature) < prototype(Neos.Fusion:Template) {
+	templatePath = 'resource://Psmb.Petition/Private/Templates/NodeTypes/Signature.html'
+	name = ${node.name}
+	place = ${node.place}
+	about = ${node.about}
+	email = ${node.email}
+	comment = ${node.comment}
 	inBackend = ${node.context.inBackend}
 }
-
-
-root.export {
-	condition = ${request.arguments.export == '1'}
-	renderer = Neos.Fusion:Http.Message {
-		httpResponseHead.headers.Content-Type = 'text/csv'
-		httpResponseHead.headers.Content-Disposition = 'attachment;filename=pokayanie1917-signatures.xml'
-		1 = Neos.Fusion:Template {
-			templatePath = 'resource://Psmb.Petition/Private/Templates/NodeTypes/SignatureExport.html'
-			items = Neos.Fusion:Collection {
-				collection = ${q(documentNode).children('petitions').children('[instanceof Psmb.Petition:Signature]').get()}
-				itemName = 'node'
-				itemRenderer = Psmb.Petition:SignatureSelected {
-					templatePath = 'resource://Psmb.Petition/Private/Templates/NodeTypes/SignatureExportItem.html'
-					email = ${node.properties.email}
-				}
-			}
-		}
-	}
-}
-root.@cache.entryIdentifier.export = ${request.arguments.export}

@@ -1,10 +1,8 @@
 Neos:
-  Flow:
-    mvc:
-      routes:
-        'Psmb.Petition':
-          position: 'before Neos.Neos'
   Neos:
     fusion:
       autoInclude:
         Psmb.Petition: true
+  Fusion:
+    defaultContext:
+      GoogleSheets: Psmb\Petition\Eel\GoogleSheetsHelper
