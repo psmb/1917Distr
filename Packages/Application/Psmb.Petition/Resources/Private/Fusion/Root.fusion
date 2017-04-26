@@ -17,6 +17,7 @@ prototype(Psmb.Petition:SignPlugin) < prototype(Neos.Fusion:Value) {
 			@cache {
 				mode = 'cached'
 				entryIdentifier.node = ${node}
+				maximumLifetime = '30000'
 			}
 		}
 		30 = Neos.Fusion:Template {
@@ -52,12 +53,14 @@ prototype(Psmb.Petition:SignPlugin) < prototype(Neos.Fusion:Value) {
 			@cache {
 				mode = 'cached'
 				entryIdentifier.node = ${node}
+				maximumLifetime = '30000'
 			}
 		}
 	}
 	@cache {
 		mode = 'cached'
 		entryIdentifier.node = ${node}
+		maximumLifetime = '30000'
 	}
 }
 
