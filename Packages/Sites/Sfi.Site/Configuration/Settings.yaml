@@ -36,3 +36,6 @@ Neos:
             values:
               - en
             uriSegment: en
+Sfi:
+  YouTube:
+    className: 'YouTube flex-video widescreen'

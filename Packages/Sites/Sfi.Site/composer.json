@@ -3,7 +3,8 @@
     "type": "neos-site",
     "description": "Website package. See distribution for more info.",
     "require": {
-        "neos/neos": "*"
+        "neos/neos": "*",
+        "sfi/youtube": "*"
     },
     "autoload": {
         "psr-4": {
