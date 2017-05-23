@@ -10,11 +10,13 @@
 							{title -> f:format.raw()}
 						</div>
 						<div class="t309__descr t-descr t-descr_md">
-							{subTitle -> f:format.raw()}
-							<br>
-							<strong><em data-redactor-tag="em">
-								<f:format.date forceLocale="{true}" cldrFormat="dd MMMM yyyy HH:mm">{date}</f:format.date><f:if condition="{placeIsSet}">,</f:if>
-								{place -> f:format.raw()}</em></strong><br>
+							<div>{subTitle -> f:format.raw()}</div>
+							<div>
+								<strong><em data-redactor-tag="em">
+									<f:format.date forceLocale="{true}" cldrFormat="dd MMMM yyyy HH:mm">{date}</f:format.date><f:if condition="{placeIsSet}">,</f:if>
+									{place -> f:format.raw()}
+								</em></strong>
+							</div>
 						</div>
 						<div class="t309__button">
 							<a class="t-btn" href="{link}" style="color:#ffffff;border:2px solid #ffffff;">
