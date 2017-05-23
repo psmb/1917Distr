@@ -13,7 +13,7 @@
 							{subTitle -> f:format.raw()}
 							<br>
 							<strong><em data-redactor-tag="em">
-								<f:format.date forceLocale="{true}" cldrFormat="dd MMMM yyyy HH:mm">{date}</f:format.date>,
+								<f:format.date forceLocale="{true}" cldrFormat="dd MMMM yyyy HH:mm">{date}</f:format.date><f:if condition="{place}">,</f:if>
 								{place -> f:format.raw()}</em></strong><br>
 						</div>
 						<div class="t309__button">
