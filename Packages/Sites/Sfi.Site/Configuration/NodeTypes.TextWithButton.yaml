@@ -2,7 +2,7 @@
   superTypes:
     'Neos.Neos:Content': true
   ui:
-    label: 'Текст с кнопкой'
+    label: 'Текст с кнопкой и картинкой'
     inlineEditable: true
     inspector:
       groups:
@@ -33,3 +33,10 @@
         inspector:
           group: link
           editor: Neos.Neos/Inspector/Editors/LinkEditor
+    image:
+      type: Neos\Media\Domain\Model\ImageInterface
+      ui:
+        label: Изображение
+        reloadIfChanged: true
+        inspector:
+          group: link

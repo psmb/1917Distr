@@ -13,6 +13,10 @@ prototype(Sfi.Site:TextWithButton) {
 			property = 'linkText'
 		}
 	}
+	imageUri = Psmb.NodeTypes:ImageUri {
+		@context.asset = ${node.properties.image}
+		@context.maximumWidth = 640
+	}
 
 	attributes {
 		class = 't-btn'
