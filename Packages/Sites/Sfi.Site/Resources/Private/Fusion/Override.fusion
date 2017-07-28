@@ -6,7 +6,20 @@ prototype(Psmb.NodeTypes:Lead) {
   attributes.style = 'font-size: 30px'
 }
 prototype(Psmb.NodeTypes:Headline) {
-  attributes.class = 't-title t-title_lg textAlign-center'
+  attributes.class = Neos.Fusion:Case {
+    small {
+      condition = ${node.properties.variant == 'small'}
+      renderer = 't-title t-title_sm textAlign-center'
+    }
+    medium {
+      condition = ${node.properties.variant == 'medium'}
+      renderer = 't-title t-title_md textAlign-center'
+    }
+    large {
+      condition = ${true}
+      renderer = 't-title t-title_lg textAlign-center'
+    }
+  }
 }
 prototype(Sfi.Site:Cover).prototype(Psmb.NodeTypes:Headline) {
   attributes.class = 't-title t-title_lg textAlign-center t102__title'

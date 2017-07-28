@@ -7,3 +7,24 @@
       groups:
         helpers:
           label: 'Штучки'
+
+
+'Psmb.NodeTypes:Headline':
+  properties:
+    variant:
+      defaultValue: large
+      type: string
+      ui:
+        label: 'Вариант параграфа'
+        reloadIfChanged: true
+        inspector:
+          group: helpers
+          editor: Neos.Neos/Inspector/Editors/SelectBoxEditor
+          editorOptions:
+            values:
+              small:
+                label: Маленький
+              medium:
+                label: Средний
+              large:
+                label: Большой
