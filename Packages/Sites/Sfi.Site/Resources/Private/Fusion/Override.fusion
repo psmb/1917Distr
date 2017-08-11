@@ -9,7 +9,7 @@ prototype(Psmb.NodeTypes:Headline) {
   attributes.class = Neos.Fusion:Case {
     small {
       condition = ${node.properties.variant == 'small'}
-      renderer = 't-title t-title_sm textAlign-center'
+      renderer = 't-heading t-heading_sm textAlign-center'
     }
     medium {
       condition = ${node.properties.variant == 'medium'}
