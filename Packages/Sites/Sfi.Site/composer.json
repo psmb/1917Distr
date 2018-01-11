@@ -4,7 +4,8 @@
     "description": "Website package. See distribution for more info.",
     "require": {
         "neos/neos": "*",
-        "sfi/youtube": "*"
+        "sfi/youtube": "*",
+        "flownative/aws-s3": "*"
     },
     "autoload": {
         "psr-4": {
