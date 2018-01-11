@@ -20,7 +20,8 @@
 		"psmb/ajaxify": "*",
 		"opsdev/cache-breaker": "^2.0",
 		"neos/neos-ui": "dev-master",
-		"neos/neos-ui-compiled": "dev-master"
+		"neos/neos-ui-compiled": "dev-master",
+		"flownative/aws-s3": "2.*"
 	},
 	"extra": {
 		"neos": {
