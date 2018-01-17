@@ -10,7 +10,7 @@ db:
     MYSQL_PASSWORD: pass
 
 web:
-  image: dimaip/docker-neos-alpine:latest
+  image: dimaip/1917distr:latest
   ports:
     - '80'
     - '1126:22'
