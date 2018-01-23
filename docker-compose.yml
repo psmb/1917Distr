@@ -10,6 +10,8 @@ services:
       MYSQL_USER: admin
       MYSQL_PASSWORD: pass
   web:
+    volumes:
+      - /data/www/Web/_Resources
     image: dimaip/1917distr:latest
     networks:
       - default
